@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bi-Weekly Report Form</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    .bi-weekly-report-form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      color: #333;
+    }
+
+    label {
+      font-weight: 500;
+      color: #555;
+    }
+
+    input,
+    textarea {
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #218838 !important;
+    }
+
+    .navbar-brand span.sphere {
+      color: #007bff;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #e7e7e7;
+    }
+
+    footer p {
+      margin: 0;
+      color: #6c757d;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="navbar-container container">
+      <a class="navbar-brand" href="#">Intern<span class="sphere">Sphere</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav nav">
+          <li class="nav-item">
+            <a class="nav-link links active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="About us.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link links dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="dropdown-item" href="internships.html">Internships</a>
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item" href="Graduate students.html">Graduate Students</a> 
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item" href="companies.html">Companies</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="signup.html">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Form -->
+  <div class="container mt-5">
+    <div class="bi-weekly-report-form">
+      <h2 class="text-center mb-4">Bi-Weekly Report Form</h2>
+      <form id="report-form">
+        <!-- Report Number -->
+        <div class="mb-3">
+          <label for="report_number" class="form-label">Report Number</label>
+          <input type="number" class="form-control" id="report_number" required>
+        </div>
+
+        <!-- Week Start -->
+        <div class="mb-3">
+          <label for="week_start" class="form-label">Week Start</label>
+          <input type="date" class="form-control" id="week_start" required>
+        </div>
+
+        <!-- Week End -->
+        <div class="mb-3">
+          <label for="week_end" class="form-label">Week End</label>
+          <input type="date" class="form-control" id="week_end" required>
+        </div>
+
+        <!-- Total Hours Completed -->
+        <div class="mb-3">
+          <label for="total_hours_completed" class="form-label">Total Hours Completed</label>
+          <input type="number" class="form-control" id="total_hours_completed" required>
+        </div>
+
+        <!-- Assignment Responsibilities -->
+        <div class="mb-3">
+          <label for="assignment_responsibilities" class="form-label">Assignment Responsibilities</label>
+          <textarea class="form-control" id="assignment_responsibilities" rows="4" required></textarea>
+        </div>
+
+        <!-- Critical Analysis -->
+        <div class="mb-3">
+          <label for="critical_analysis" class="form-label">Critical Analysis</label>
+          <textarea class="form-control" id="critical_analysis" rows="4" required></textarea>
+        </div>
+
+        <!-- Observing Hours -->
+        <div class="mb-3">
+          <label for="observing_hours" class="form-label">Observing Hours</label>
+          <input type="number" class="form-control" id="observing_hours" required>
+        </div>
+
+        <!-- Administrative Hours -->
+        <div class="mb-3">
+          <label for="administrative_hours" class="form-label">Administrative Hours</label>
+          <input type="number" class="form-control" id="administrative_hours" required>
+        </div>
+
+        <!-- Researching Hours -->
+        <div class="mb-3">
+          <label for="researching_hours" class="form-label">Researching Hours</label>
+          <input type="number" class="form-control" id="researching_hours" required>
+        </div>
+
+        <!-- Assisting Hours -->
+        <div class="mb-3">
+          <label for="assisting_hours" class="form-label">Assisting Hours</label>
+          <input type="number" class="form-control" id="assisting_hours" required>
+        </div>
+
+        <!-- Misc Hours -->
+        <div class="mb-3">
+          <label for="misc_hours" class="form-label">Misc Hours</label>
+          <input type="number" class="form-control" id="misc_hours" required>
+        </div>
+
+        <!-- Meetings and Discussions -->
+        <div class="mb-3">
+          <label for="meetings_discussions" class="form-label">Meetings and Discussions</label>
+          <textarea class="form-control" id="meetings_discussions" rows="4" required></textarea>
+        </div>
+
+        <!-- Course Relevance Suggestions -->
+        <div class="mb-3">
+          <label for="course_relevance_suggestions" class="form-label">Course Relevance Suggestions</label>
+          <textarea class="form-control" id="course_relevance_suggestions" rows="4"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-success">Submit Report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 InternSphere. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("report-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      console.log("Form submitted.");
+      // Add your form submission logic here (e.g., send data to a backend).
+    });
+  </script>
+</body>
+</html>
