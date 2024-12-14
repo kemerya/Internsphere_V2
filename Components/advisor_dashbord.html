@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="css/hulu.css">
+    <link rel="stylesheet" href="css/home.css">
+
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .section-title {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn-purple {
+            background-color: purple;
+            color: #fff;
+        }
+
+        .btn-purple:hover {
+            background-color: #6a1b9a;
+        }
+
+        .sidebar {
+            background-color: purple;
+            height: 100vh;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+        }
+
+        .sidebar a {
+            color: #d1c4e9;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #4a148c;
+            color: white;
+        }
+
+        .main-content {
+            /* margin-left: 270px; */
+            /* padding: 20px; */
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <Special-Header></Special-Header>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="py-2">
+            <div class="container">
+                <h1 class="section-title">Welcome, Advisor</h1>
+                <p class="lead">Manage and oversee student interns effectively through this dashboard.</p>
+            </div>
+        </section>
+
+        <!-- Student List Section -->
+        <section id="student-list" class="py-2">
+            <div class="container">
+                <h3 class="section-title text-center">Student List</h3>
+
+                <!-- Filters -->
+                <div class="filter-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by Name" id="filter-name">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by ID" id="filter-id">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by Section" id="filter-section">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Student ID</th>
+                                <th>Section</th>
+                                <th>Department</th>
+                                <th>Weekly Report</th>
+                                <th>Final Report</th>
+                                <th>Attendance</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Kemerya Zeynu</td>
+                                <td>RCD/3471/2013</td>
+                                <td>J</td>
+                                <td>Computer Science</td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Amir Yasin</td>
+                                <td>RCD/3451/2013</td>
+                                <td>J</td>
+                                <td>Computer Science</td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Rahel Habtamu</td>
+                                <td>RCD/3484/2013</td>
+                                <td>J</td>
+                                <td>Computer Science</td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Martha Shimels</td>
+                                <td>RCD/3480/2013</td>
+                                <td>J</td>
+                                <td>Computer Science</td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <Special-Footer></Special-Footer>
+
+    <script src="./FooterHeader.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Placeholder for filters functionality
+        document.getElementById('filter-name').addEventListener('input', function () {
+            console.log('Filter by Name:', this.value);
+        });
+
+        document.getElementById('filter-id').addEventListener('input', function () {
+            console.log('Filter by ID:', this.value);
+        });
+
+        document.getElementById('filter-section').addEventListener('input', function () {
+            console.log('Filter by Section:', this.value);
+        });
+    </script>
+</body>
+</html>
