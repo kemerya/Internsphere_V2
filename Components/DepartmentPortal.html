@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hulu.css">
+    <style>
+        body {
+            background-color:whitesmoke;
+            font-family: 'Roboto', sans-serif;
+        }
+        /* .navbar {
+            background-color: #6a1b9a;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #fff !important;
+        }
+        .navbar-nav .nav-link {
+            color: #d1c4e9 !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #fff !important;
+        } */
+        .section-title {
+            color: #6a1b9a;
+            font-weight: bold;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        /* .btn-purple {
+            background-color: #6a1b9a;
+            color: #fff;
+        } */
+        .btn-purple:hover {
+            background-color: #4a148c;
+        }
+        .smooth-animation {
+            transition: all 0.3s ease-in-out;
+        }
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <Special-Header></Special-Header>
+    <!-- <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Department Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- main Section -->
+    <section class="py-5 text-center bg-light">
+        <div class="container">
+            <h1 class="section-title">Welcome to the Department Portal</h1>
+            <p class="lead">Efficiently manage and oversee student internships and reports.</p>
+            <img src="images/department-hero.jpg" alt="Department Portal" class="img-fluid rounded mt-4">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Features</h2>
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3 smooth-animation">
+                        <img src="img/student-reports.png" alt="View Student Reports" class="feature-image">
+                        <div class="card-body">
+                            <h5 class="card-title">View Student Reports</h5>
+                            <p class="card-text">Access detailed reports for each student’s internship progress.</p>
+                            <button class="btn btn-purple">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3 smooth-animation">
+                        <img src="images/assign-supervisors.jpg" alt="Assign Supervisors" class="feature-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Assign Supervisors</h5>
+                            <p class="card-text">Easily assign supervisors to student interns.</p>
+                            <button class="btn btn-purple">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3 smooth-animation">
+                        <img src="images/send-reports-supervisors.jpg" alt="Send Reports to Supervisors" class="feature-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Send Reports to Supervisors</h5>
+                            <p class="card-text">Share student reports with assigned supervisors directly.</p>
+                            <button class="btn btn-purple">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p>&copy; 2024 Department Portal. All Rights Reserved.</p>
+        </div>
+    </footer> -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <Special-Footer></Special-Footer>
+            <script src="./FooterHeader.js"></script>
+</body>
+</html>

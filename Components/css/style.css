@@ -79,9 +79,9 @@ special-footer .footer-col ul li a {
 }
 
 special-footer .footer-col ul li a::before {
-    content: '🌐'; /* Add an icon (replace as needed) */
-    font-size: 1rem; /* Adjust icon size */
-    color: #f39c12;
+    content: '.'; 
+    font-size: 1rem;
+    color:#ffffff;
 }
 
 /* Mobile-Friendly Adjustments */
