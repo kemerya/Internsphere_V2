@@ -4,290 +4,159 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-    <link rel="stylesheet" href="css/hulu.css" />
+    <link rel="stylesheet" href="css/student-profile.css" />
   </head>
-  <style>
-    /* Global Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      outline: none;
-      border: none;
-      text-decoration: none;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    /* Body Styling */
-    body {
-      background: #e5e5e5;
-      font-family: "Poppins", sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: row;
-      color: #0c0a0a;
-    }
-
-    /* Container for the layout */
-    .container {
-      display: flex;
-      flex: 1;
-      width: 100%;
-    }
-
-    /* Sidebar Styling */
-    nav {
-      position: relative;
-      height: 100vh;
-      background: purple;
-      width: 280px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding-top: 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      font-weight: bold;
-    }
-
-    nav li {
-      margin-bottom: 20px;
-    }
-
-    .logo {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-
-    .logo span {
-      font-weight: bold;
-      padding-left: 15px;
-      font-size: 20px;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    a {
-      color: #d1d1d1;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      width: 100%;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    a:hover {
-      background: #ca08d1;
-      color: #fff;
-    }
-
-    a .fas {
-      font-size: 20px;
-      margin-right: 15px;
-    }
-
-    .logout {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-
-    /* Main Content Area */
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 40px;
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      overflow-y: auto;
-    }
-
-    section {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      padding: 30px;
-      margin-bottom: 30px;
-      width: 50%;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: box-shadow 0.3s ease;
-    }
-
-    section:hover {
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-
-    }
-
-    h2 {
-      font-size: 1.75em;
-      color: #1d1010;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    button {
-      padding: 12px 18px;
-      background-color: #b1237a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-    h2 {
-      text-align: center;
-    }
-    button:hover {
-      background-color: #d633c0;
-    }
-
-    ul {
-      list-style-type: none;
-    }
-
-    ul li {
-      font-size: 16px;
-      margin: 8px 0;
-    }
-
-  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.clouldflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <body>
-    <!-- Navbar -->
-    <Special-Header></Special-Header>
-    <!-- Main -->
-    <div class="container">
-        <!-- Sidebar Navigation -->
-        <nav>
-          <ul>
-            <li>
-              <a href="#" class="logo">
-                <img src="internspherelogo.jpg" alt="Logo" />
-                <span class="nav-item">Dashboard</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-home"></i>
-                <span class="nav-item">Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-about"></i>
-                <span class="nav-item">About Us</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-service"></i>
-                <span class="nav-item">service</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-contact"></i>
-                <span class="nav-item">contact us</span>
-              </a>
-            </li>
-            <li>
-              <a href="student-profile.html">
-                <i class="fas fa-user"></i>
-                <span class="nav-item">Profile</span>
-              </a>
-            </li>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li class="active">
+          <a href="#">
+
+            <!-- side bar -->
+            <img src="internshipp.jpg" alt="Logo" />
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashbored</span>
+        </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-about"></i>
+              <span class="nav-item">About Us</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-service"></i>
+              <span class="nav-item">service</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-contact"></i>
+              <span class="nav-item">contact us</span>
+            </a>
           </li>
   
-            <li>
-              <a href="#">
-                <i class="fas fa-cog"></i>
-                <span class="nav-item">Settings</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-question-circle"></i>
-                <span class="nav-item">Help</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="logout">
-                <i class="fas fa-sign-out-alt"></i>
-                <span class="nav-item">Logout</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-  
-        <!-- Main Content Area -->
-        <main>
-          <h2>Welcome to student Dashboard</h2>
-          <section class="profile">
-            <h2>Your Profile</h2>
-            <p><strong>Name:</strong></p>
-            <p><strong>Email:</strong></p>
-            <p><strong>Internship Position:</strong></p>
-            <button>edit</button>
-            <button>view profile</button>
-          </section>
-  
-          <section class="tasks">
-            <h2>Internship Opportunities</h2>
-            <ul>
-              <li></li>
-              <li>Explore internship avaliable for you.</li>
-            </ul>
-            <button>View Opportunities</button>
-          </section>
-  
-          <section class="announcements">
-            <h2>My Application</h2>
-            <ul>
-              <li>Track your internship Application.</li>
-            </ul>
-            <button>View Opportunities</button>
-          </section>
-          <section class="announcements">
-            <h2>Submit bi-weekly Report</h2>
-            <ul>
-              <li>Keep internship progress up to date.</li>
-            </ul>
-            <button>View</button>
-          </section>
-          <section class="announcements">
-            <h2>Internship Application</h2>
-            <ul>
-              <li>Apply internship.</li>
-            </ul>
-            <a href="internshipappform.html"><button>Apply</button></a>
-          </section>
-  
-    <!-- Footer -->
-    <Special-Footer></Special-Footer>
+          <li>
+            <a href="student-profile.html">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Profile</span>
+            </a>
+          </li>
+        </li>
 
-    <script src="./FooterHeader.js"></script>
-  </body>
-</html>
+          <li>
+            <a href="#">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+</div>
+<!-- the header part -->
+
+      <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <span>Dashbored</span>
+          <h2>Welcome to student Dashboard</h2>
+        </div>
+        <div class="user--info">
+          <img src="img/user.jpg" alt="fornow" />
+        </div>
+<!-- the body part -->
+      </div>
+      <div class="card--container light-purple">
+        <h3 class="main--title ">Your Profile</h3>
+        <h2></h2>
+          <p><strong>Name:</strong></p>
+          <p><strong>Email:</strong></p>
+          <p><strong>Internship Position:</strong></p>
+          <button>Edit</button>
+          <button>view profile</button>
+        </section>
+        <div class="card--wrapper">
+            </div>
+  
+            </div>
+
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Main Content Area -->
+      <main>
+        <h2></h2>
+        <section class="profile">
+          
+
+        <section class="tasks">
+          <h2>Internship Opportunities</h2>
+          <ul>
+            <li></li>
+            <li>Explore internship avaliable for you.</li>
+          </ul>
+          <button>View Opportunities</button>
+        </section>
+
+        <section class="announcements">
+          <h2>My Application</h2>
+          <ul>
+            <li>Track your internship Application.</li>
+          </ul>
+          <button>View Opportunities</button>
+        </section>
+        <section class="announcements">
+          <h2>Submit bi-weekly Report</h2>
+          <ul>
+            <li>Keep internship progress up to date.</li>
+          </ul>
+          <button>View</button>
+        </section>
