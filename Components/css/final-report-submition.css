@@ -1,0 +1,53 @@
+body {
+  margin: 20px 0;
+}
+
+.submission-containor-for-upload-file {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.file-input-input-the-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px dashed purple;
+  background-color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.file-input-input-the-file:hover {
+  border-color: purple;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: purple;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-submit:hover {
+  background-color: purple;
+}
+
+.form-label {
+  color: purple;
+}
+
+h2 {
+  color: purple;
+}
