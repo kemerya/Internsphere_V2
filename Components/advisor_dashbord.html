@@ -7,10 +7,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="css/hulu.css">
     <link rel="stylesheet" href="css/home.css">
-
 
     <style>
         body {
@@ -65,14 +63,12 @@
         }
 
         .main-content {
-            /* margin-left: 270px; */
-            /* padding: 20px; */
+            padding: 20px;
         }
 
         .filter-group {
             margin-bottom: 20px;
         }
-       
     </style>
 </head>
 <body>
@@ -110,7 +106,7 @@
 
                 <!-- Student Table -->
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="advisor-table">
                         <thead class="table-light">
                             <tr>
                                 <th>#</th>
@@ -131,17 +127,16 @@
                                 <td>RCD/3471/2013</td>
                                 <td>J</td>
                                 <td>Computer Science</td>
-                                <td><button class="btn btn-purple btn-sm">View</button></td>
-                                <td><button class="btn btn-purple btn-sm">View</button></td>
+                                <td><a href="bi_Weekly_Report_sample.html"><button class="btn btn-purple btn-sm">View</button></a></td>
+                                <td><button class="btn btn-purple btn-sm" onclick="downloadPDF()">View</button> </td>                                
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
                                 <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
                             </tr>
                             <tr>
-                            <tr>
                                 <td>2</td>
                                 <td>Amir Yasin</td>
                                 <td>RCD/3451/2013</td>
-                                <td>J</td>
+                                <td>i</td>
                                 <td>Computer Science</td>
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
@@ -163,14 +158,13 @@
                                 <td>4</td>
                                 <td>Martha Shimels</td>
                                 <td>RCD/3480/2013</td>
-                                <td>J</td>
+                                <td>k</td>
                                 <td>Computer Science</td>
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
                                 <td><button class="btn btn-purple btn-sm">View</button></td>
                                 <td><button class="btn btn-purple btn-sm">Evaluate</button></td>
                             </tr>
-                            <!-- Add more rows as needed -->
                         </tbody>
                     </table>
                 </div>
@@ -182,19 +176,50 @@
     <script src="./FooterHeader.js"></script>
     
     <!-- Custom JavaScript -->
-    <script>
-        // Placeholder for filters functionality
+    
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+         <script>
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+  
+      // Example content for the PDF
+      doc.text("Final Report", 10, 10);
+      doc.text("Name: Kemerya Zeynu", 10, 20);
+      doc.text("ID: RCD/3471/2013", 10, 30);
+      doc.text("Section: Section A", 10, 40);
+  
+      // Save the PDF
+      doc.save("Final_Report.pdf");
+    }
+  
+ 
+        // Filter Functionality
         document.getElementById('filter-name').addEventListener('input', function () {
-            console.log('Filter by Name:', this.value);
+            filterTable(1, this.value);
         });
 
         document.getElementById('filter-id').addEventListener('input', function () {
-            console.log('Filter by ID:', this.value);
+            filterTable(2, this.value);
         });
 
         document.getElementById('filter-section').addEventListener('input', function () {
-            console.log('Filter by Section:', this.value);
+            filterTable(3, this.value);
         });
+
+        function filterTable(columnIndex, query) {
+            const table = document.getElementById('advisor-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells[columnIndex] && cells[columnIndex].innerText.toLowerCase().includes(query.toLowerCase())) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
     </script>
 </body>
 </html>

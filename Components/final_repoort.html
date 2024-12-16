@@ -1,0 +1,21 @@
+<td>
+    <button class="btn btn-purple btn-sm" onclick="downloadPDF()">View</button>
+  </td>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+  
+      // Example content for the PDF
+      doc.text("Final Report", 10, 10);
+      doc.text("Name: Kemerya Zeynu", 10, 20);
+      doc.text("ID: RCD/3471/2013", 10, 30);
+      doc.text("Section: Section A", 10, 40);
+  
+      // Save the PDF
+      doc.save("Final_Report.pdf");
+    }
+  </script>
+  
