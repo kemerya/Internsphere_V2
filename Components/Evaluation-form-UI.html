@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Evaluation Form</title>
+    <title>Student Dashboard - Report Tracking</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,148 +11,107 @@
     <style>
       body {
         margin: 50px 0;
+        background-color: #f8f9fa;
       }
 
-      .evaluation-form-container {
-        max-width: 700px;
+      .dashboard-container {
+        max-width: 1200px;
         margin: 40px auto;
         padding: 20px;
-        background-color: #f9f9f9;
+        background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .form-control {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .btn-submit {
-        width: 100%;
-        background-color: #7b2cbf;
-        color: #ffffff;
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
-
-      .btn-submit:hover {
-        background-color: #5a189a;
-      }
-
-      .form-label {
-        color: #7b2cbf;
       }
 
       h2 {
         color: #7b2cbf;
       }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #7b2cbf;
+        color: #ffffff;
+      }
+
+      .status-pending {
+        color: #ffc107;
+        font-weight: bold;
+      }
+
+      .status-approved {
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .status-rejected {
+        color: #dc3545;
+        font-weight: bold;
+      }
+
+      .btn-view {
+        background-color: #7b2cbf;
+        color: #ffffff;
+      }
+
+      .btn-view:hover {
+        background-color: #5a189a;
+      }
     </style>
   </head>
   <body>
-    <div class="evaluation-form-container">
-      <h2 class="text-center mb-4">Advisor Evaluation Form</h2>
-      <form>
-        <!-- Student Name -->
-        <div class="mb-3">
-          <label for="studentName" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="studentName"
-            placeholder="Enter student's name"
-            required
-          />
-        </div>
-
-        <!-- Student ID -->
-        <div class="mb-3">
-          <label for="studentId" class="form-label">Student ID</label>
-          <input
-            type="text"
-            class="form-control"
-            id="studentId"
-            placeholder="Enter student ID"
-            required
-          />
-        </div>
-
-        <!-- Project Title -->
-        <div class="mb-3">
-          <label for="projectTitle" class="form-label">Project Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="projectTitle"
-            placeholder="Enter project title"
-            required
-          />
-        </div>
-
-        <!-- Evaluation Criteria -->
-        <div class="mb-3">
-          <label class="form-label">Clarity of Objectives</label>
-          <select class="form-control" id="clarityObjectives" required>
-            <option value="">Select a rating</option>
-            <option value="5">Excellent</option>
-            <option value="4">Very Good</option>
-            <option value="3">Good</option>
-            <option value="2">Fair</option>
-            <option value="1">Poor</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Technical Competence</label>
-          <select class="form-control" id="technicalCompetence" required>
-            <option value="">Select a rating</option>
-            <option value="5">Excellent</option>
-            <option value="4">Very Good</option>
-            <option value="3">Good</option>
-            <option value="2">Fair</option>
-            <option value="1">Poor</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Communication Skills</label>
-          <select class="form-control" id="communicationSkills" required>
-            <option value="">Select a rating</option>
-            <option value="5">Excellent</option>
-            <option value="4">Very Good</option>
-            <option value="3">Good</option>
-            <option value="2">Fair</option>
-            <option value="1">Poor</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Overall Performance</label>
-          <select class="form-control" id="overallPerformance" required>
-            <option value="">Select a rating</option>
-            <option value="5">Excellent</option>
-            <option value="4">Very Good</option>
-            <option value="3">Good</option>
-            <option value="2">Fair</option>
-            <option value="1">Poor</option>
-          </select>
-        </div>
-
-        <!-- Comments Section -->
-        <div class="mb-3">
-          <label for="comments" class="form-label">Additional Comments</label>
-          <textarea
-            class="form-control"
-            id="comments"
-            rows="4"
-            placeholder="Enter any additional comments..."
-          ></textarea>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-submit mt-3">
-          Submit Evaluation <i class="bi bi-check-circle ms-2"></i>
-        </button>
-      </form>
+    <div class="dashboard-container">
+      <h2 class="text-center mb-4">Student Dashboard - Report Tracking</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Report Title</th>
+            <th>Submission Date</th>
+            <th>Status</th>
+            <th>Feedback</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Final Year Project Report</td>
+            <td>2024-12-10</td>
+            <td><span class="status-approved">Approved</span></td>
+            <td>Well done! Great work.</td>
+            <td>
+              <button class="btn btn-sm btn-view">View Report</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Midterm Internship Report</td>
+            <td>2024-11-20</td>
+            <td><span class="status-pending">Pending</span></td>
+            <td>-</td>
+            <td>
+              <button class="btn btn-sm btn-view">View Report</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Initial Project Proposal</td>
+            <td>2024-10-05</td>
+            <td><span class="status-rejected">Rejected</span></td>
+            <td>Needs more clarity in objectives.</td>
+            <td>
+              <button class="btn btn-sm btn-view">View Report</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
