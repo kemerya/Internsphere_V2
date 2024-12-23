@@ -115,7 +115,7 @@ body {
   display: flex;
   flex-direction: column; /* Stack cards vertically in each column */
   gap: 20px; /* Space between cards in the column */
-  flex: 1; /* Make both columns equal in width */
+  flex: 2; /* Make both columns equal in width */
 }
 
 .card {
@@ -128,7 +128,7 @@ body {
 }
 
 .card img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   border-bottom: 1px solid #ddd;
 }
@@ -190,34 +190,9 @@ h2 {
   text-align: center;
 }
 button:hover {
-  background-color: #d633c0;
+  background-color: purple;
 }
 
-.light-red {
-  background: rgb(251, 233, 233);
-}
-
-.light-purple {
-  background: rgb(254, 226, 233);
-}
-.light-green {
-  background: rgb(235, 254, 235);
-}
-.light-blue {
-  background: rgb(236, 236, 254);
-}
-.dark-red {
-  background: red;
-}
-.dark-purple {
-  background: purple;
-}
-.dark-green {
-  background: green;
-}
-.dark-blue {
-  background: blue;
-}
 .tabular--wrapper {
   background: #fff;
   margin-top: 1rem;
@@ -263,4 +238,7 @@ tfoot td {
   color: green;
   background: none;
   cursor: pointer;
+}
+.b {
+  color: red;
 }

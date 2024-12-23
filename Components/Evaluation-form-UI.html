@@ -3,117 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Dashboard - Report Tracking</title>
+    <title>Evaluation</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      body {
-        margin: 50px 0;
-        background-color: #f8f9fa;
-      }
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-      .dashboard-container {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      h2 {
-        color: #7b2cbf;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      th,
-      td {
-        padding: 10px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      th {
-        background-color: #7b2cbf;
-        color: #ffffff;
-      }
-
-      .status-pending {
-        color: #ffc107;
-        font-weight: bold;
-      }
-
-      .status-approved {
-        color: #28a745;
-        font-weight: bold;
-      }
-
-      .status-rejected {
-        color: #dc3545;
-        font-weight: bold;
-      }
-
-      .btn-view {
-        background-color: #7b2cbf;
-        color: #ffffff;
-      }
-
-      .btn-view:hover {
-        background-color: #5a189a;
-      }
-    </style>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hulu.css" />
+    <link rel="stylesheet" href="css/evaluation.css">
   </head>
   <body>
-    <div class="dashboard-container">
-      <h2 class="text-center mb-4">Student Dashboard - Report Tracking</h2>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Report Title</th>
-            <th>Submission Date</th>
-            <th>Status</th>
-            <th>Feedback</th>
-            <th>Actions</th>
+    <Special-Header></Special-Header>
+
+
+<body>
+    <div class="c">
+        <h1><strong>Evaluation Form</strong></h1>
+        
+    <div class="filter">
+            <input type="text" placeholder="Filter by Student name">
+            <input type="text" placeholder="Filter by Id number">
+            <input type="text" placeholder="Filter by Section">
+          </div>
+          </div>
+      <br>
+      <br>
+      <br>
+<div class="ca">
+        <table>
+            <thead >             <tr class="rows">
+                    <th onclick="sortTable(0)">student Name</th>
+                    <th onclick="sortTable(1)">Student Id</th>
+                    <th onclick="sortTable(2)">Reports(20%)</th>
+                    <th>presentation(15%)</th>
+                    <th>final Report(15%)</th>
+                    <th>Company Evaluation(50%)</th>
+                    <th>Total(100%)</th>
+                    <th> <button class="">Action</button></th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>R</td>
+                <td>RCD/0000/2013</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+                <td><input type="number"></td > 
+                                    <td><input type="number"></td>
+                                    <td><input type="number"></td>
+                                    <td><button class="download">Submit</button></td>
+            </tr> <tr>
+              <td>R</td>
+              <td>RCD/0000/2013</td>
+              <td><input type="number"></td>
+              <td><input type="number"></td>
+              <td><input type="number"></td > 
+                                  <td><input type="number"></td>
+                                  <td><input type="number"></td>
+                                  <td><button class="download">Submit</button></td>
           </tr>
-        </thead>
-        <tbody>
           <tr>
-            <td>Final Year Project Report</td>
-            <td>2024-12-10</td>
-            <td><span class="status-approved">Approved</span></td>
-            <td>Well done! Great work.</td>
-            <td>
-              <button class="btn btn-sm btn-view">View Report</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Midterm Internship Report</td>
-            <td>2024-11-20</td>
-            <td><span class="status-pending">Pending</span></td>
-            <td>-</td>
-            <td>
-              <button class="btn btn-sm btn-view">View Report</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Initial Project Proposal</td>
-            <td>2024-10-05</td>
-            <td><span class="status-rejected">Rejected</span></td>
-            <td>Needs more clarity in objectives.</td>
-            <td>
-              <button class="btn btn-sm btn-view">View Report</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <td>R</td>
+            <td>RCD/0000/2013</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td > 
+                                <td><input type="number"></td>
+                                <td><input type="number"></td>
+                                <td><button class="download">Submit</button></td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>RCD/0000/2013</td>
+          <td><input type="number"></td>
+          <td><input type="number"></td>
+          <td><input type="number"></td > 
+                              <td><input type="number"></td>
+                              <td><input type="number"></td>
+                              <td><button class="download">Submit</button></td>
+      </tr>
+                <!-- Repeat <tr> for additional reports -->
+            </tbody>
+        </table>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script >function sortTable(n) {
+        const table = document.querySelector("table");
+        let switching = true;
+        let shouldSwitch;
+        let = "asc"; 
+        let switchcount = 0;
+    
+        while (switching) {
+            switching = false;
+            const rows = table.rows;
+    
+            for (let i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+    
+                const x = rows[i].getElementsByTagName("TD")[n];
+                const y = rows[i + 1].getElementsByTagName("TD")[n];
+    
+                if (dir === "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch true;
+                        break;
+                    }
+                } else if (dir === "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+    
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+    </script>
+<br>
+<br>
+    <Special-Footer></Special-Footer>
+
+    <script src="./FooterHeader.js"></script>
   </body>
 </html>

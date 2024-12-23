@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+   : 20px;
+}
+
+.c {
+    max-width: px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 02px 10px rgba(0, 0, 0, 0.1);
+}
+.ca{
+    max-width: 100000000px;
+    
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 02px 10px rgba(0, 0, 0, 0.1);
+}
+.rows{
+    color: purple;
+    background:purple;
+}
+h1 {
+    text-align: center;
+    color:purple;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content:space-between;
+
+}
+
+.filters input, .filters select, .filters button {
+    padding: 10px;
+    margin-right 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: purple;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+}
+.download{
+    color:white;
+    background: purple;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+   : pointer;
+}
+.submit{
+    color: purple;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
