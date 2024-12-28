@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Registration Forms</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #c5c5c5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .tab-button:hover {
+      background-color: rgb(87, 10, 87);
+    }
+
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form h2 {
+      margin-bottom: 15px;
+    }
+
+    .form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .form button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form button:hover {
+      background-color: purple;
+    }
+  </style>
+  <body>
+    <div class="form-container">
+      <div class="button-group">
+        <button class="tab-button">Student</button>
+
+        <!-- Student Form -->
+        <form id="student-form" class="form" style="display: none">
+            <h2>Student Registration</h2>
+            <label for="student-name">Name:</label>
+            <input type="text" id="student-name" name="student-name" required />
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="student-id" required />
+            <label for="student-email">Email:</label>
+            <input
+              type="email"
+              id="student-email"
+              name="student-email"
+              required
+            />
+            <button type="submit">Submit</button>
+          </form>
+          <button class="tab-button" onclick="showForm('internship-unit')">
+          Internship Unit
+        </button>
+        <button class="tab-button" onclick="showForm('department')">
+          Department
+        </button>
+        <button class="tab-button" onclick="showForm('advisor')">
+          Advisor
+        </button>
+</div>
+
+        <!-- Internship Unit Form -->
+        <form id="internship-unit-form" class="form" style="display: none">
+          <h2>Internship Unit Registration</h2>
+          <label for="unit-name">Unit Name:</label>
+          <input type="text" id="unit-name" name="unit-name" required />
+          <label for="unit-head">Head of Unit:</label>
+          <input type="text" id="unit-head" name="unit-head" required />
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- Department Form -->
+        <form id="department-form" class="form" style="display: none">
+          <h2>Department Registration</h2>
+          <label for="department-name">Department Name:</label>
+          <input
+            type="text"
+            id="department-name"
+            name="department-name"
+            required
+          />
+          <label for="department-head">Head of Department:</label>
+          <input
+            type="text"
+            id="department-head"
+            name="department-head"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- Advisor Form -->
+        <form id="advisor-form" class="form" style="display: none">
+          <h2>Advisor Registration</h2>
+          <label for="advisor-name">Name:</label>
+          <input type="text" id="advisor-name" name="advisor-name" required />
+          <label for="advisor-email">Email:</label>
+          <input
+            type="email"
+            id="advisor-email"
+            name="advisor-email"
+            required
+          />
+          <label for="advisor-department">Department:</label>
+          <input
+            type="text"
+            id="advisor-department"
+            name="advisor-department"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function showForm(formId) {
+        // Hide all forms
+        const forms = document.querySelectorAll(".form");
+        forms.forEach((form) => (form.style.display = "none"));
+
+        // Show the selected form
+        const selectedForm = document.getElementById(`${formId}-form`);
+        if (selectedForm) {
+          selectedForm.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
