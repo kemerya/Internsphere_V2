@@ -9,303 +9,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <style>* {
-      margin: 0;
-      padding: 0;
-      border: none;
-      outline: none;
-      box-sizing: border-box;
-      font-family: "Poopins", sans-serif;
-    }
-    body {
-      display: flex;
-    }
-    .sidebar {
-      position: sticky;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 110px;
-      height: 100vh;
-      padding: 0 1.7rem;
-      color: aliceblue;
-      overflow: hidden;
-      transition: all 0.5s linear;
-      background: purple
-    }
-    .sidebar:hover {
-      width: 240px;
-      transition: 0.5s;
-    }
-    .logo {
-      height: 80px;
-      padding: 16px;
-    }
-    .menu {
-      height: 88%;
-      position: relative;
-      list-style: none;
-      padding: 0;
-    }
-    .menu li {
-      padding: 1rem;
-      margin: 8px 0;
-      border-radius: 8px;
-      transition: all 0.5s ease-in-out;
-    }
-    .menu li:hover,
-    .active {
-      background: rgb(180, 179, 179);
-    }
-    .menu a {
-      color: aliceblue;
-      font-size: 14px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 1.5em;
-    }
-    .menu a span {
-      overflow: hidden;
-    }
-    .menu a li {
-      font-size: 1.2rem;
-    }
-    .logout {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
-    
-    .main--content {
-      position: relative;
-      background: rgb(240, 238, 238);
-      width: 100%;
-      padding: 1rem;
-    }
-    .header--wrapper img {
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-    .header--wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      background: white;
-      border-radius: 10px;
-      padding: 10px 2rem;
-      margin-bottom: 1rem;
-    }
-    .header--title {
-      color: rgba(113, 99, 186, 255);
-    }
-    .user--info {
-      display: flex;
-      align-items: center;
-      gap: 1;
-    }
-    .search--box {
-      background-color: rgb(202, 202, 204);
-      border-radius: 15px;
-      color: rgba(113, 99, 186, 255);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 12px;
-    }
-    .search--box input {
-      background: transparent;
-      padding: 10px;
-    }
-    .search--box i {
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.5 ease-in-out;
-    }
-    .search--box i:hover {
-      transform: scale(1.2);
-    }
-    .card--container {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-    }
-    .card--wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .main--title {
-      color: rgba(113, 99, 186, 255);
-      padding-bottom: 10px;
-      font-size: 15px;
-    }
-    .payment--card {
-      background-color: gray;
-      border-radius: 10px;
-      padding: 1.2rem;
-      width: 290px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.5s ease-in-out;
-    }
-    .payment--card:hover {
-      transform: translateY(-5px);
-    }
-    .card--header {
-      display: flex;
-      flex-direction: column;
-    }
-    .title {
-      font-size: 12px;
-      font-weight: 200;
-    }
-    .amount--value {
-      font-size: 24px;
-      font-family: "courier new", courier, monospace;
-      font-weight: 600;
-    }
-    .icon {
-      color: white;
-      padding: 1rem;
-      height: 60px;
-      width: 60px;
-      text-align: center;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      background: red;
-    }
-    
-    .dropdown {
-      display: none; /* Hidden by default */
-      position: absolute;
-      top: 100%; /* Positioned below the parent */
-      left: 0;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-      overflow: hidden;
-    }
 
-
-    .dropdown li:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown li a {
-      display: block;
-      padding: 10px 15px;
-      text-decoration: none;
-      color: #333;
-      background-color: #fff;
-      transition: background-color 0.3s;
-    }
-
-    .dropdown li a:hover {
-      background-color: #f1f1f1;
-    }
-
-    /* Show dropdown on hover */
-    .nav > li:hover .dropdown {
-      display: block;}
-
-    .card.detail {
-      font-size: 18px;
-      color: gray;
-      letter-spacing: 2px;
-      font-family: "courier new", courier, monospace;
-    }
-    
-    .light-red {
-      background: rgb(251, 233, 233);
-    }
-    
-    .light-purple {
-      background: rgb(254, 226, 233);
-    }
-    .light-green {
-      background: rgb(235, 254, 235);
-    }
-    .light-blue {
-      background: rgb(236, 236, 254);
-    }
-    .dark-red {
-      background: red;
-    }
-    .dark-purple {
-      background: purple;
-    }
-    .dark-green {
-      background: green;
-    }
-    .dark-blue {
-      background: blue;
-    }
-    .tabular--wrapper {
-      background: #fff;
-      margin-top: 1rem;
-      border-radius: 10px;
-      padding: 2rem;
-    }
-    .table--container {
-      width: 100%;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    thead {
-      background: rgba(113, 99, 186, 255);
-      color: #fff;
-    }
-    th {
-      padding: 15px;
-      text-align: left;
-    }
-    tbody {
-      background: #f2f2f2;
-    }
-    td {
-      padding: 15px;
-      font-size: 14px;
-      color: #333;
-    }
-    tr:nth-child(even) {
-      background: #fff;
-    }
-    tfoot {
-      background: rgba(113, 99, 186, 255);
-      font-weight: bold;
-      color: #fff;
-    }
-    tfoot td {
-      padding: 15px;
-      color: #fff;
-    }
-    .table--container button {
-      color: green;
-      background: none;
-      cursor: pointer;
-    }
-    </style>
+    <link rel="stylesheet" href="css/admin.css" />
   </head>
-  
+
   <link
     rel="stylesheet"
     href="https://cdnjs.clouldflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <body>
+    <!-- side bar -->
     <div class="sidebar">
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="img/" alt="" />
+      </div>
       <ul class="menu">
         <li class="active">
           <a href="#">
@@ -314,14 +31,14 @@
           </a>
         </li>
         <li>
-          <a href="home.html">
+          <a href="Administer-dashbored.html">
             <i class="fas fa-chart-bar"></i>
             <span>Home</span>
           </a>
         </li>
-        
+
         <li>
-          <a href="#">
+          <a href="Register-actors.html ">
             <i class="fas fa-user"></i>
             <span>Register</span>
           </a>
@@ -339,7 +56,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="view-list.html">
             <i class="fas fa-star"></i>
             <span>View list</span>
           </a>
@@ -351,7 +68,7 @@
             <li><a href="#">Company List</a></li>
           </ul>
         </li>
-        
+
         <li>
           <a href="login.html">
             <i class="fas fa-sign-out-alt"></i>
@@ -360,11 +77,13 @@
         </li>
       </ul>
     </div>
+    
+    <!-- header part -->
     <div class="main--content">
+      
       <div class="header--wrapper">
         <div class="header--title">
-          <span>Primary</span>
-          <h2>Dashbored</h2>
+          <h2>Inter<span>Sphere</span></h2>
         </div>
         <div class="user--info">
           <div class="search--box">
@@ -374,9 +93,12 @@
           <img src="dvphoto.jpg" alt="fornow" />
         </div>
       </div>
+      <h1>Welcome, username to Aminstative Dashbored</h1>
+      <!-- box for the cards -->
       <div class="card--container">
-        <h3 class="main--title">Today's data</h3>
+        <h3 class="main--title">information</h3>
         <div class="card--wrapper">
+          <!-- card-1 -->
           <div class="payment--card light-red">
             <div class="card--header">
               <div class="ammount">
@@ -387,7 +109,7 @@
             </div>
             <span class="card-detail"> ***** ***** **** 3484 </span>
           </div>
-
+          <!-- card-2 -->
           <div class="payment--card light-purple">
             <div class="card--header">
               <div class="ammount">
@@ -398,7 +120,7 @@
             </div>
             <span class="card-detail"> ***** ***** **** 3484 </span>
           </div>
-
+          <!-- card-3 -->
           <div class="payment--card light-green">
             <div class="card--header">
               <div class="ammount">
@@ -410,6 +132,7 @@
             <span class="card-detail"> ***** ***** **** 3484 </span>
           </div>
 
+          <!-- card-4 -->
           <div class="payment--card light-blue">
             <div class="card--header">
               <div class="ammount">
@@ -422,99 +145,25 @@
           </div>
         </div>
       </div>
-      <div class="tabular--wrapper">
-        <h3 class="main-titlle">Finance data</h3>
-        <div class="table-container"> <table>
-          <thead>
-            <tr>
-              <th>date</th>
-              <th>Transaction Type</th>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Category</th>
-              <th>status</th>
-              <th>Action</th>
-            </tr>
-            <tbody>
-              <tr>
-                <td>
-                  2023-05-01
-                </td>
-                <td>Expenses</td>
-                <td>Office supplies</td>
-                <td>$258</td>
-                <td>Office Expenses</td>
-                <td>pending</td>
-                <td><button>Edit</button></td>
-              </tr>
-              <tr>
-                <td>
-                  2023-05-01
-                </td>
-                <td>Expenses</td>
-                <td>Office supplies</td>
-                <td>$258</td>
-                <td>Office Expenses</td>
-                <td>pending</td>
-                <td><button>Edit</button></td>
-              </tr>
-              <tr>
-                <td>
-                  2023-05-01
-                </td>
-                <td>Expenses</td>
-                <td>Office supplies</td>
-                <td>$258</td>
-                <td>Office Expenses</td>
-                <td>pending</td>
-                <td><button>Edit</button></td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="7">Total: $1,000</td>
-              </tr>
-            </tfoot>
-          </thead>
-        </table></div>
+      <div class="container">
+        <div class="container">
+          <div class="card">
+              <h3>Card 1</h3>
+              <p>Content for card 1.</p>
+          </div>
+          <div class="card">
+              <h3>Card 2</h3>
+              <p>Content for card 2.</p>
+          </div>
+          <div class="card">
+              <h3>Card 3</h3>
+              <p>Content for card 3.</p>
+          </div>
+          <div class="card">
+              <h3>Card 4</h3>
+              <p>Content for card 4.</p>
+          </div>
       </div>
-      
-      <footer class="footer">
-        <ul class="footer-list">
-          Company
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Our service</a></li>
-          <li><a href="#">privacy policy</a></li>
-          <li><a href="#">Affilate program</a></li>
-          <hr />
-        </ul>
-        <ul class="footer-list">
-          Get help
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Details</a></li>
-          <li><a href="#">Return</a></li>
-          <li><a href="#">Order status</a></li>
-          <hr />
-        </ul>
-        <ul class="footer-list">
-          Online Application status
-          <li><a href="#">Tech companies</a></li>
-          <li><a href="#">Marketing Companies</a></li>
-          <li><a href="#">Goverment companies</a></li>
-          <li><a href="#">other</a></li>
-          <hr />
-        </ul>
-        <ul class="footer-list">
-          Follow us
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Linked in</a></li>
-          <hr />
-        </ul>
-        <hr />
-      </footer>
     </div>
-    
   </body>
 </html>
