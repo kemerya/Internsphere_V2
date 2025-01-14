@@ -41,12 +41,11 @@
       .smooth-animation {
         transition: all 0.3s ease-in-out;
       }
-      .feature-image {    
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 8px;
+
+      .feature-image {
+        margin: 0 auto;
       }
+
       .sidebar {
         background-color: purple;
         height: 100vh;
@@ -79,10 +78,10 @@
       <!-- Main Section -->
       <section class="py-5 text-center bg-light">
         <div class="container">
-          <h1 class="section-title">Welcome to the Student boared</h1>
+          <h1 class="section-title">Welcome to the Student dashboared</h1>
           <p class="lead">
-            Streamlining internship management for students, companies, and
-            departments.
+            "Empowering students to track and manage their internships with
+            ease."
           </p>
           <!-- <img src="images/hero-image.jpg" alt="Internship Portal" class="img-fluid rounded mt-4"> -->
         </div>
@@ -94,69 +93,78 @@
           <h2 class="section-title text-center">Features</h2>
           <div class="row mt-4">
             <div class="col-md-6 mb-4">
+              <!-- card-1 profile edit and view -->
               <div class="card p-3 smooth-animation">
                 <img
-                  src="img/profile photo.webp"
+                  src="img/profile.svg"
                   alt="Profile"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Profile</h5>
-                  <p class="card-text">
-                    Organize and manage orientation sessions for students and
-                    companies with ease.
-                  </p>
-                  <button class="btn btn-purple">Edit</button>
+                  <p class="card-text">Edit and View your Profile</p>
+                  <a href="Edit-profile.html"
+                    ><button class="btn btn-purple">Edit</button></a
+                  >
                   <a href="student-profile.html">
                     <button class="btn btn-purple">View profile</button></a
                   >
                 </div>
               </div>
             </div>
+            <!-- card-2 intern opportunties -->
             <div class="col-md-6 mb-4">
               <div class="card p-3 smooth-animation">
                 <img
-                  src="img/view-placement.jpg"
+                  src="img/opportunties.svg"
                   alt="View Placement Details"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">View intern opportunties</h5>
-                  <p class="card-text">
-                    Access detailed information about internship placements.
-                  </p>
-                  <button class="btn btn-purple">View Opportinties</button>
+                  <p class="card-text">View Detail Intern Opportunties</p>
+                  <a href="internship-Opportunties.html"
+                    ><button class="btn btn-purple">
+                      View Opportinties
+                    </button></a
+                  >
                 </div>
               </div>
             </div>
+            <!-- card-3 bi-weekly report -->
             <div class="col-md-6 mb-4">
               <div class="card p-3 smooth-animation">
                 <img
-                  src="img/biweekly image.jpg"
+                  src="img/bi-weeklyreport.svg"
                   alt="Generate Reports"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Bi-Weekly Report</h5>
-                  <p class="card-text">
-                    Create and view detailed internship reports.
-                  </p>
-                  <button class="btn btn-purple">View Bi weekly reports</button>
+                  <p class="card-text">Submit your Bi-weekly.</p>
+                  <a href="bi_weekly_report.html"
+                    ><button class="btn btn-purple">
+                      View Bi weekly reports
+                    </button></a
+                  >
                 </div>
               </div>
             </div>
+            <!-- card-4 final report -->
             <div class="col-md-6 mb-4">
               <div class="card p-3 smooth-animation">
                 <img
-                  src="img/finall report.jpg"
+                  src="img/finallbi.svg"
                   alt="View Attendance Records"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Final Report</h5>
-                  <p class="card-text">
-                    Access and manage student attendance records effectively.
-                  </p>
+                  <p class="card-text">Submit your final report.</p>
                   <a href="final-report-submition-UI.html"
                     ><button class="btn btn-purple">
                       submit the final report
@@ -165,29 +173,34 @@
                 </div>
               </div>
             </div>
+            <!-- card-5 select active country -->
             <div class="col-md-6 mb-4">
               <div class="card p-3 smooth-animation">
                 <img
-                  src="images/send-confirmation.jpg"
+                  src="img/select.svg"
                   alt="Send Confirmation Letters"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Select Active company</h5>
-                  <p class="card-text">
-                    Generate and send internship confirmation letters to
-                    companies.
-                  </p>
-                  <button class="btn btn-purple">View Active companies</button>
+                  <p class="card-text">Select Company</p>
+                  <a href="Active-company.html"
+                    ><button class="btn btn-purple">
+                      View Active companies
+                    </button></a
+                  >
                 </div>
               </div>
             </div>
+            <!-- card-6 track approve applications -->
             <div class="col-md-6 mb-4">
               <div class="card p-3 smooth-animation">
                 <img
-                  src="images/send-reports.jpg"
+                  src="img/track.svg"
                   alt="Send Student Reports"
                   class="feature-image"
+                  width="300px"
                 />
                 <div class="card-body">
                   <h5 class="card-title">
@@ -197,7 +210,9 @@
                     Send detailed reports to respective departments
                     effortlessly.
                   </p>
-                  <button class="btn btn-purple">View Details</button>
+                  <a href="Track-pending.html"
+                    ><button class="btn btn-purple">View Details</button></a
+                  >
                 </div>
               </div>
             </div>

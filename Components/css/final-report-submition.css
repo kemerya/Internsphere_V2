@@ -15,7 +15,18 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
-
+.button-colors {
+  color: white;
+  background: purple;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 4px;
+}
+.button-colors:hover {
+  color: rgb(197, 195, 195);
+  background: rgb(204, 19, 204);
+}
 .file-input-input-the-file {
   display: flex;
   align-items: center;

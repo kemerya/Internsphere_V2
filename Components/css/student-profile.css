@@ -15,6 +15,19 @@
   width: 90%;
   margin: 10px;
 }
+.button-colors {
+  color: white;
+  background: purple;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 4px;
+  margin-top: 10px;
+}
+.button-colors:hover {
+  color: rgb(197, 195, 195);
+  background: rgb(204, 19, 204);
+}
 
 .box {
   background: #fff;
@@ -32,11 +45,11 @@
 }
 /* Purple Part Styles */
 
-h2 {
-  text-align: center;
-  color: #333;
+.hhead {
+  margin-top: 80px;
+  margin: auto 0px;
+  font-size: 25px;
 }
-
 .profile-section {
   display: flex;
   padding: 20px;

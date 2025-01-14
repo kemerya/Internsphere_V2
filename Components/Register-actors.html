@@ -333,6 +333,35 @@
       color: purple;
       text-align: center;
     }
+    
+  <style>
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .dropdown {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+  </style>
   </style>
   <body>
     <!-- side bar part -->
@@ -594,107 +623,111 @@ function showOptions() {
 }
 </script> -->
 
-      <h1>Registeration</h1>
-      <!-- form container part -->
-      <div class="form-container">
-        <div class="button-group">
-          <button class="tab-button" onclick="showForm('Student')">
-            Student
-          </button>
+</head>
+<body>
+  <h1>Registration</h1>
 
-          <button class="tab-button" onclick="showForm('internship-unit')">
-            Internship Unit
-          </button>
-          <button class="tab-button" onclick="showForm('department')">
-            Department
-          </button>
-          <button class="tab-button" onclick="showForm('advisor')">
-            Advisor
-          </button>
-        </div>
+  <!-- Sidebar dropdowns -->
+  <div class="dropdown" onclick="toggleDropdown(this)">
+    Register
+    <div class="dropdown-content">
+      <!-- Register options -->
+      <p>Student</p>
+      <p>Internship Unit</p>
+      <p>Department</p>
+      <p>Advisor</p>
+    </div>
+  </div>
 
-        <!-- Student Form -->
-        <form id="student-form" class="form">
-          <h2>Student Registration</h2>
-          <label for="student-name">Name:</label>
-          <input type="text" id="student-name" name="student-name" required />
-          <label for="student-id">Student ID:</label>
-          <input type="text" id="student-id" name="student-id" required />
-          <label for="student-email">Email:</label>
-          <input
-            type="email"
-            id="student-email"
-            name="student-email"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <!-- Internship Unit Form -->
-        <form id="internship-unit-form" class="form" style="display: none">
-          <h2>Internship Unit Registration</h2>
-          <label for="unit-name">Unit Name:</label>
-          <input type="text" id="unit-name" name="unit-name" required />
-          <label for="unit-head">Head of Unit:</label>
-          <input type="text" id="unit-head" name="unit-head" required />
-          <button type="submit">Submit</button>
-        </form>
+  <div class="dropdown" onclick="toggleDropdown(this)">
+    View List
+    <div class="dropdown-content">
+      <!-- View list options -->
+      <p>Students</p>
+      <p>Units</p>
+      <p>Departments</p>
+      <p>Advisors</p>
+    </div>
+  </div>
 
-        <!-- Department Form -->
-        <form id="department-form" class="form" style="display: none">
-          <h2>Department Registration</h2>
-          <label for="department-name">Department Name:</label>
-          <input
-            type="text"
-            id="department-name"
-            name="department-name"
-            required
-          />
-          <label for="department-head">Head of Department:</label>
-          <input
-            type="text"
-            id="department-head"
-            name="department-head"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-
-        <!-- Advisor Form -->
-        <form id="advisor-form" class="form" style="display: none">
-          <h2>Advisor Registration</h2>
-          <label for="advisor-name">Name:</label>
-          <input type="text" id="advisor-name" name="advisor-name" required />
-          <label for="advisor-email">Email:</label>
-          <input
-            type="email"
-            id="advisor-email"
-            name="advisor-email"
-            required
-          />
-          <label for="advisor-department">Department:</label>
-          <input
-            type="text"
-            id="advisor-department"
-            name="advisor-department"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+  <!-- Form container part -->
+  <div class="form-container">
+    <div class="button-group">
+      <button class="tab-button" onclick="showForm('student')">Student</button>
+      <button class="tab-button" onclick="showForm('internship-unit')">Internship Unit</button>
+      <button class="tab-button" onclick="showForm('department')">Department</button>
+      <button class="tab-button" onclick="showForm('advisor')">Advisor</button>
     </div>
 
-    <script>
-      function showForm(formId) {
-        // Hide all forms
-        const forms = document.querySelectorAll(".form");
-        forms.forEach((form) => (form.style.display = "none"));
+    <!-- Student Form -->
+    <form id="student-form" class="form">
+      <h2>Student Registration</h2>
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" name="student-name" required />
+      <label for="student-id">Student ID:</label>
+      <input type="text" id="student-id" name="student-id" required />
+      <label for="student-email">Email:</label>
+      <input type="email" id="student-email" name="student-email" required />
+      <button type="submit">Submit</button>
+    </form>
 
-        // Show the selected form
-        const selectedForm = document.getElementById(`${formId}-form`);
-        if (selectedForm) {
-          selectedForm.style.display = "block";
-        }
+    <!-- Internship Unit Form -->
+    <form id="internship-unit-form" class="form">
+      <h2>Internship Unit Registration</h2>
+      <label for="unit-name">Unit Name:</label>
+      <input type="text" id="unit-name" name="unit-name" required />
+      <label for="unit-head">Head of Unit:</label>
+      <input type="text" id="unit-head" name="unit-head" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Department Form -->
+    <form id="department-form" class="form">
+      <h2>Department Registration</h2>
+      <label for="department-name">Department Name:</label>
+      <input type="text" id="department-name" name="department-name" required />
+      <label for="department-head">Head of Department:</label>
+      <input type="text" id="department-head" name="department-head" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Advisor Form -->
+    <form id="advisor-form" class="form">
+      <h2>Advisor Registration</h2>
+      <label for="advisor-name">Name:</label>
+      <input type="text" id="advisor-name" name="advisor-name" required />
+      <label for="advisor-email">Email:</label>
+      <input type="email" id="advisor-email" name="advisor-email" required />
+      <label for="advisor-department">Department:</label>
+      <input type="text" id="advisor-department" name="advisor-department" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Randomly display the student form
+    document.addEventListener("DOMContentLoaded", () => {
+      const shouldDisplayStudentForm = Math.random() < 0.5;
+      if (shouldDisplayStudentForm) {
+        document.getElementById("student-form").style.display = "block";
       }
-    </script>
+    });
+
+    function showForm(formId) {
+      // Hide all forms
+      const forms = document.querySelectorAll(".form");
+      forms.forEach((form) => (form.style.display = "none"));
+
+      // Show the selected form
+      const selectedForm = document.getElementById(`${formId}-form`);
+      if (selectedForm) {
+        selectedForm.style.display = "block";
+      }
+    }
+
+    function toggleDropdown(element) {
+      element.classList.toggle("active");
+    }
+  </script>
   </body>
 </html>
