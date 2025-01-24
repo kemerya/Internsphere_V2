@@ -15,10 +15,12 @@
 
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/hulu.css" />
+    <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
-    <Special-Header></Special-Header>
-    <h1>Welcome, username to Aminstative Dashbored</h1>
+    <div>
+      <Special-Header></Special-Header>
+      <h1>Welcome, username to Aminstative Dashbored</h1>
       <!-- box for the cards -->
 
       <!-- Card Container -->
@@ -67,58 +69,59 @@
             <div class="card--header">
               <span class="title">Advisor</span>
               <span class="ammount-value" id="advisor-card-value">0</span>
-            </div>
+            
           </div>
         </div>
       </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
-</html>
-<script>
-  function updateCards() {
-    // Get the input values
-    const studentCount = document.getElementById("student").value;
-    const internshipCount = document.getElementById("internship").value;
-    const departmentCount = document.getElementById("department").value;
-    const advisorCount = document.getElementById("advisor").value;
 
-    // Update the cards with the entered values
-    document.getElementById("student-card-value").textContent = studentCount;
-    document.getElementById("internship-card-value").textContent =
-      internshipCount;
-    document.getElementById("department-card-value").textContent =
-      departmentCount;
-    document.getElementById("advisor-card-value").textContent = advisorCount;
+    <script>
+      function updateCards() {
+        // Get the input values
+        const studentCount = document.getElementById("student").value;
+        const internshipCount = document.getElementById("internship").value;
+        const departmentCount = document.getElementById("department").value;
+        const advisorCount = document.getElementById("advisor").value;
 
-    // Optionally, you can remove unwanted parts or modify other content as needed
-    if (studentCount === "0") {
-      document.getElementById("card-1").style.display = "none"; // Hide the card if no students
-    } else {
-      document.getElementById("card-1").style.display = "block"; // Show the card if there are students
-    }
+        // Update the cards with the entered values
+        document.getElementById("student-card-value").textContent =
+          studentCount;
+        document.getElementById("internship-card-value").textContent =
+          internshipCount;
+        document.getElementById("department-card-value").textContent =
+          departmentCount;
+        document.getElementById("advisor-card-value").textContent =
+          advisorCount;
 
-    // Repeat the process for other cards if needed
-    if (internshipCount === "0") {
-      document.getElementById("card-2").style.display = "none"; // Hide card if no internship units
-    } else {
-      document.getElementById("card-2").style.display = "block";
-    }
+        // Optionally, you can remove unwanted parts or modify other content as needed
+        if (studentCount === "0") {
+          document.getElementById("card-1").style.display = "none"; // Hide the card if no students
+        } else {
+          document.getElementById("card-1").style.display = "block"; // Show the card if there are students
+        }
 
-    if (departmentCount === "0") {
-      document.getElementById("card-3").style.display = "none"; // Hide card if no departments
-    } else {
-      document.getElementById("card-3").style.display = "block";
-    }
+        // Repeat the process for other cards if needed
+        if (internshipCount === "0") {
+          document.getElementById("card-2").style.display = "none"; // Hide card if no internship units
+        } else {
+          document.getElementById("card-2").style.display = "block";
+        }
 
-    if (advisorCount === "0") {
-      document.getElementById("card-4").style.display = "none"; // Hide card if no advisors
-    } else {
-      document.getElementById("card-4").style.display = "block";
-    }
-  }
-</script>
+        if (departmentCount === "0") {
+          document.getElementById("card-3").style.display = "none"; // Hide card if no departments
+        } else {
+          document.getElementById("card-3").style.display = "block";
+        }
+
+        if (advisorCount === "0") {
+          document.getElementById("card-4").style.display = "none"; // Hide card if no advisors
+        } else {
+          document.getElementById("card-4").style.display = "block";
+        }
+      }
+    </script>
     <Special-Footer></Special-Footer>
 
     <script src="./FooterHeader.js"></script>

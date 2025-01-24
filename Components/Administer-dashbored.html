@@ -193,3 +193,683 @@
     }
   }
 </script>
+"<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Registration Forms</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      font-family: "Poopins", sans-serif;
+    }
+    body {
+      display: flex;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 110px;
+      height: 100vh;
+      padding: 0 1.7rem;
+      color: aliceblue;
+      overflow: hidden;
+      transition: all 0.5s linear;
+      background: purple;
+    }
+    .sidebar:hover {
+      width: 240px;
+      transition: 0.5s;
+    }
+    .logo {
+      height: 80px;
+      padding: 16px;
+    }
+    .menu {
+      height: 88%;
+      position: relative;
+      list-style: none;
+      padding: 0;
+    }
+    .menu li {
+      padding: 1rem;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: all 0.5s ease-in-out;
+    }
+    .menu li:hover,
+    .active {
+      background: rgb(180, 179, 179);
+    }
+    .menu a {
+      color: aliceblue;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+    }
+    .menu a span {
+      overflow: hidden;
+    }
+    .menu a li {
+      font-size: 1.2rem;
+    }
+    .logout {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .main--content {
+      position: relative;
+      background: rgb(240, 238, 238);
+      width: 100%;
+      padding: 1rem;
+    }
+    .header--wrapper img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .header--wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 2rem;
+      margin-bottom: 1rem;
+    }
+    .header--title {
+      color: rgba(113, 99, 186, 255);
+    }
+    .user--info {
+      display: flex;
+      align-items: center;
+      gap: 1;
+    }
+    .search--box {
+      background-color: rgb(202, 202, 204);
+      border-radius: 15px;
+      color: rgba(113, 99, 186, 255);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+    }
+    .search--box input {
+      background: transparent;
+      padding: 10px;
+    }
+    .search--box i {
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.5 ease-in-out;
+    }
+    .search--box i:hover {
+      transform: scale(1.2);
+    }
+    .dropdown {
+      display: none; /* Hidden by default */
+      position: absolute;
+      top: 100%; /* Positioned below the parent */
+      left: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .dropdown li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      background-color: #fff;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown li a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show dropdown on hover */
+    .nav > li:hover .dropdown {
+      display: block;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .tab-button:hover {
+      background-color: rgb(87, 10, 87);
+    }
+    .page-header {
+      padding: 1.3rem 1rem;
+      background: #e9edf2;
+      border-bottom: 1px solid #dee2e8;
+    }
+
+    .page-header h1,
+    .page-header small {
+      color: #74767d;
+    }
+
+    .page-content {
+      padding: 1.3rem 1rem;
+      background: #f1f4f9;
+    }
+
+    .analytics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+      background: #fff;
+      padding: 1rem;
+      border-radius: 3px;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-head h2 {
+      color: #333;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .card-head span {
+      font-size: 3.2rem;
+      color: var(--text-grey);
+    }
+
+    .card-progress small {
+      color: #777;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card-indicator {
+      margin: 0.7rem 0rem;
+      height: 10px;
+      border-radius: 4px;
+      background: #e9edf2;
+      overflow: hidden;
+    }
+
+    .indicator {
+      height: 10px;
+      border-radius: 4px;
+    }
+
+    .indicator.one {
+      background: #22baa0;
+    }
+
+    .indicator.two {
+      background: #11a8c3;
+    }
+
+    .indicator.three {
+      background: #f6d433;
+    }
+
+    .indicator.four {
+      background: #f25656;
+    }
+
+    .records {
+      box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+      background: #fff;
+      border-radius: 3px;
+    }
+
+    .record-header {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form h2 {
+      margin-bottom: 15px;
+    }
+
+    .form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .form button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form button:hover {
+      background-color: purple;
+    }
+    h1 {
+      color: purple;
+      text-align: center;
+    }
+    
+  <style>
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .dropdown {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+  </style>
+  </style>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hulu.css" />
+  </head>
+  <body>
+    <!-- header part -->
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          <h2></h2>
+        </div>
+  
+      </div>
+      <!-- the 4 box(card) part -->
+
+      <div class="page-header">
+        <h2 class="Dashboard">Dashboard</h2>
+        <small>Register/ Dashboard</small>
+      </div>
+
+      <div class="page-content">
+        <div class="analytics">
+          <div class="card">
+            <div class="card-head">
+              <h2>107,200</h2>
+              <span class="las la-user-friends"></span>
+            </div>
+            <div class="card-progress">
+              <small>Student list</small>
+              <div class="card-indicator">
+                <div class="indicator one" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>340,230</h2>
+              <span class="las la-eye"></span>
+            </div>
+            <div class="card-progress">
+              <small>Advisor</small>
+              <div class="card-indicator">
+                <div class="indicator two" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>4</h2>
+              <span class="las la-shopping-cart"></span>
+            </div>
+            <div class="card-progress">
+              <small>department</small>
+              <div class="card-indicator">
+                <div class="indicator three" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>47,500</h2>
+              <span class="las la-envelope"></span>
+            </div>
+            <div class="card-progress">
+              <small>Company</small>
+              <div class="card-indicator">
+                <div class="indicator four" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Registration Options -->
+      <!-- <div class="button-group" id="registration-options">
+  <h2>Register</h2>
+  <button class="tab-button" onclick="showForm('student')">
+    Student
+  </button>
+  <button class="tab-button" onclick="showForm('internship-unit')">
+    Internship Unit
+  </button>
+  <button class="tab-button" onclick="showForm('department')">
+    Department
+  </button>
+  <button class="tab-button" onclick="showForm('advisor')">
+    Advisor
+  </button>
+</div>
+
+<!-- Form Container -->
+      <!-- <div class="form-container" id="form-container">
+  <button class="back-button" onclick="showOptions()">Back</button> -->
+
+      <!-- Student Form -->
+      <!-- <form id="student-form" class="form">
+    <h2>Student Registration</h2>
+    <label for="student-name">Name:</label>
+    <input type="text" id="student-name" name="student-name" required />
+    <label for="student-id">Student ID:</label>
+    <input type="text" id="student-id" name="student-id" required />
+    <label for="student-email">Email:</label>
+    <input
+      type="email"
+      id="student-email"
+      name="student-email"
+      required
+    />
+    <button type="submit">Submit</button>
+  </form> -->
+
+      <!-- Internship Unit Form -->
+      <!-- <form id="internship-unit-form" class="form" style="display: none">
+    <h2>Internship Unit Registration</h2>
+    <label for="unit-name">Unit Name:</label>
+    <input type="text" id="unit-name" name="unit-name" required />
+    <label for="unit-head">Head of Unit:</label>
+    <input type="text" id="unit-head" name="unit-head" required />
+    <button type="submit">Submit</button>
+  </form> -->
+
+      <!-- Department Form -->
+      <!-- <form id="department-form" class="form" style="display: none">
+    <h2>Department Registration</h2>
+    <label for="department-name">Department Name:</label>
+    <input
+      type="text"
+      id="department-name"
+      name="department-name"
+      required
+    />
+    <label for="department-head">Head of Department:</label>
+    <input
+      type="text"
+      id="department-head"
+      name="department-head"
+      required
+    />
+    <button type="submit">Submit</button>
+  </form> -->
+
+      <!-- Advisor Form -->
+      <!-- <form id="advisor-form" class="form" style="display: none">
+    <h2>Advisor Registration</h2>
+    <label for="advisor-name">Name:</label>
+    <input type="text" id="advisor-name" name="advisor-name" required />
+    <label for="advisor-email">Email:</label>
+    <input
+      type="email"
+      id="advisor-email"
+      name="advisor-email"
+      required
+    />
+    <label for="advisor-department">Department:</label>
+    <input
+      type="text"
+      id="advisor-department"
+      name="advisor-department"
+      required
+    />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</div>
+
+<script>
+function showForm(formId) { -->
+      <!-- // Hide registration options
+  document.getElementById("registration-options").style.display =
+    "none";
+
+  // Show the form container
+  const formContainer = document.getElementById("form-container");
+  formContainer.style.display = "block";
+
+  // Hide all forms
+  const forms = formContainer.querySelectorAll(".form");
+  forms.forEach((form) => (form.style.display = "none"));
+
+  // Show the selected form
+  const selectedForm = document.getElementById(`${formId}-form`);
+  if (selectedForm) {
+    selectedForm.style.display = "block";
+  }
+}
+
+function showOptions() {
+  // Hide the form container
+  document.getElementById("form-container").style.display = "none";
+
+  // Show the registration options
+  document.getElementById("registration-options").style.display =
+    "block";
+}
+</script> -->
+
+</head>
+<body>
+  <h1>Registration</h1>
+
+  <!-- Sidebar dropdowns -->
+  <div class="dropdown" onclick="toggleDropdown(this)">
+    Register
+    <div class="dropdown-content">
+      <!-- Register options -->
+      <p>Student</p>
+      <p>Internship Unit</p>
+      <p>Department</p>
+      <p>Advisor</p>
+    </div>
+  </div>
+
+  <div class="dropdown" onclick="toggleDropdown(this)">
+    View List
+    <div class="dropdown-content">
+      <!-- View list options -->
+      <p>Students</p>
+      <p>Units</p>
+      <p>Departments</p>
+      <p>Advisors</p>
+    </div>
+  </div>
+
+  <!-- Form container part -->
+  <div class="form-container">
+    <div class="button-group">
+      <button class="tab-button" onclick="showForm('student')">Student</button>
+      <button class="tab-button" onclick="showForm('internship-unit')">Internship Unit</button>
+      <button class="tab-button" onclick="showForm('department')">Department</button>
+      <button class="tab-button" onclick="showForm('advisor')">Advisor</button>
+    </div>
+
+    <!-- Student Form -->
+    <form id="student-form" class="form">
+      <h2>Student Registration</h2>
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" name="student-name" required />
+      <label for="student-id">Student ID:</label>
+      <input type="text" id="student-id" name="student-id" required />
+      <label for="student-email">Email:</label>
+      <input type="email" id="student-email" name="student-email" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Internship Unit Form -->
+    <form id="internship-unit-form" class="form">
+      <h2>Internship Unit Registration</h2>
+      <label for="unit-name">Unit Name:</label>
+      <input type="text" id="unit-name" name="unit-name" required />
+      <label for="unit-head">Head of Unit:</label>
+      <input type="text" id="unit-head" name="unit-head" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Department Form -->
+    <form id="department-form" class="form">
+      <h2>Department Registration</h2>
+      <label for="department-name">Department Name:</label>
+      <input type="text" id="department-name" name="department-name" required />
+      <label for="department-head">Head of Department:</label>
+      <input type="text" id="department-head" name="department-head" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Advisor Form -->
+    <form id="advisor-form" class="form">
+      <h2>Advisor Registration</h2>
+      <label for="advisor-name">Name:</label>
+      <input type="text" id="advisor-name" name="advisor-name" required />
+      <label for="advisor-email">Email:</label>
+      <input type="email" id="advisor-email" name="advisor-email" required />
+      <label for="advisor-department">Department:</label>
+      <input type="text" id="advisor-department" name="advisor-department" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Randomly display the student form
+    document.addEventListener("DOMContentLoaded", () => {
+      const shouldDisplayStudentForm = Math.random() < 0.5;
+      if (shouldDisplayStudentForm) {
+        document.getElementById("student-form").style.display = "block";
+      }
+    });
+
+    function showForm(formId) {
+      // Hide all forms
+      const forms = document.querySelectorAll(".form");
+      forms.forEach((form) => (form.style.display = "none"));
+
+      // Show the selected form
+      const selectedForm = document.getElementById(`${formId}-form`);
+      if (selectedForm) {
+        selectedForm.style.display = "block";
+      }
+    }
+
+    function toggleDropdown(element) {
+      element.classList.toggle("active");
+    }
+  </script>
+  </body>
+</html>
+"

@@ -9,7 +9,7 @@
 body {
   display: flex;
 }
-..header--wrapper img {
+.header--wrapper img {
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -86,6 +86,7 @@ body {
 .card--header {
   display: flex;
   flex-direction: column;
+  ju
 }
 .title {
   font-size: 12px;
@@ -143,9 +144,9 @@ body {
   display: block;
 }
 h1 {
-    text-align: center;
-    color: purple;
-  }
+  text-align: center;
+  color: purple;
+}
 .card.detail {
   font-size: 18px;
   color: gray;
@@ -229,12 +230,7 @@ h1 {
   background-color: #6c757d;
   color: white;
   border: none;
-  padding: 10px 15px;3484
-  payment ammount $1500.00
-  ***** ***** **** 7745
-  Register
-  Student Internship Unit Department Advisor
-  
+  padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
@@ -248,60 +244,58 @@ h1 {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 24px; /* Increased space between cards */
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 24px; /* Increased space between cards */
+  padding: 30px;
+  max-width: 1290px;
+  margin: auto;
 }
 
 .card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-    padding: 24px; /* Increased padding */
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-size: 18px; /* Larger text size */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px; /* Increased padding */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 20px; /* Larger text size */
 }
 
 .card h3 {
-    font-size: 24px; /* Larger heading size */
-    margin-bottom: 12px;
+  font-size: 24px; /* Larger heading size */
+  margin-bottom: 12px;
 }
 
 .card p {
-    font-size: 16px;
-    line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .card:hover {
-    transform: translateY(-8px); /* Slightly larger hover effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px); /* Slightly larger hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr; /* Switch to one column on smaller screens */
-    }
+  .container {
+    grid-template-columns: 1fr; /* Switch to one column on smaller screens */
+  }
 }
 
-
 /* this is for approve company page */
-
 
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  align-items: normal;
+  padding: 0px;
 }
 
 .header {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   text-align: center;
   padding: 15px 0;
@@ -313,10 +307,10 @@ h1 {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px 0;
-  padding: 20px;
+  width: 1150px;
+  max-width: 2000px;
+  margin: 0px 0;
+  padding: 10px;
 }
 
 .card-header {
@@ -331,9 +325,10 @@ table {
   margin-bottom: 20px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
-  padding: 10px;
+  padding: 5px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -351,7 +346,8 @@ tr:hover {
   gap: 10px;
 }
 
-.approve-button, .reject-button {
+.approve-button,
+.reject-button {
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
@@ -361,12 +357,12 @@ tr:hover {
 }
 
 .approve-button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
 .approve-button:hover {
-  background-color: #45A049;
+  background-color: #45a049;
 }
 
 .reject-button {
