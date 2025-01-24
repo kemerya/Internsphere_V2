@@ -47,10 +47,9 @@
         <!-- Main Section -->
         <section class="py-5 text-center bg-light">
           <div class="container">
-            <h1 class="section--title">Welcome to the Student dashboared</h1>
+            <h1 class="section---title">Welcome to the Student dashboared</h1>
             <p class="lead">
-              "Empowering students to track and manage their internships with
-              ease."
+              "Appr."
             </p>
             <!-- <img src="images/hero-image.jpg" alt="Internship Portal" class="img-fluid rounded mt-4"> -->
           </div>
@@ -228,7 +227,7 @@
         <td>12345</td>
         <td>Pending</td>
         <td class="action-buttons">
-            <button class="approve-button">Approve</button>
+          <button class="btn btn-purple" id="approve-btn">Approve</button>
             <button class="reject-button">Reject</button>
         </td>
     </tr>
@@ -243,47 +242,17 @@
   </body>
 </html>
 <script>
-  function updateCards() {
-    // Get the input values
-    const studentCount = document.getElementById("student").value;
-    const internshipCount = document.getElementById("internship").value;
-    const departmentCount = document.getElementById("department").value;
-    const advisorCount = document.getElementById("advisor").value;
+  <!-- Approve Company Page -->
+<button class="btn btn-purple" id="approve-btn">Approve</button>
 
-    // Update the cards with the entered values
-    document.getElementById("student-card-value").textContent = studentCount;
-    document.getElementById("internship-card-value").textContent =
-      internshipCount;
-    document.getElementById("department-card-value").textContent =
-      departmentCount;
-    document.getElementById("advisor-card-value").textContent = advisorCount;
 
-    // Optionally, you can remove unwanted parts or modify other content as needed
-    if (studentCount === "0") {
-      document.getElementById("card-1").style.display = "none"; // Hide the card if no students
-    } else {
-      document.getElementById("card-1").style.display = "block"; // Show the card if there are students
-    }
+  document.getElementById("approve-btn").addEventListener("click", function() {
+    // Store the approval action in local storage
+    localStorage.setItem("companyApproved", true);
+    // Redirect to the admin dashboard
+    window.location.href = "admin.html";  // Update with your actual dashboard URL
+  });
 
-    // Repeat the process for other cards if needed
-    if (internshipCount === "0") {
-      document.getElementById("card-2").style.display = "none"; // Hide card if no internship units
-    } else {
-      document.getElementById("card-2").style.display = "block";
-    }
-
-    if (departmentCount === "0") {
-      document.getElementById("card-3").style.display = "none"; // Hide card if no departments
-    } else {
-      document.getElementById("card-3").style.display = "block";
-    }
-
-    if (advisorCount === "0") {
-      document.getElementById("card-4").style.display = "none"; // Hide card if no advisors
-    } else {
-      document.getElementById("card-4").style.display = "block";
-    }
-  }
 </script>
 
     <Special-Footer></Special-Footer>
