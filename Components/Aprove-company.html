@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hulu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.clouldflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  </head>
+  <body>
+    <div>
+    <Special-Header></Special-Header>
+    <a href="admin.html"
+        ><button class="button-colors">Back</button></a
+      >
+    <!-- header part -->
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+          
+        </div>
+        <div class="user--info">
+         
+            
+            
+       <!-- -- box for the cards --> 
+       <div class="main-content">
+      
+            <!-- <img src="images/hero-image.jpg" alt="Internship Portal" class="img-fluid rounded mt-4"> -->
+          </div>
+      
+
+      <!-- Card Container -->
+      <div class="card--container">
+        <h3 class="main--title">Information</h3>
+        <div class="card--wrapper">
+          <!-- Card 1 -->
+          <div class="payment--card light-purple" id="card-1">
+            <div class="icon-container">
+              <i class="fas fa-user-graduate icon dark-purple"></i>
+            </div>
+
+            <div class="card--header">
+              <span class="title">Student</span>
+              <span class="ammount-value" id="student-card-value">0</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="payment--card light-purple" id="card-2">
+            <div class="icon-container">
+              <i class="fas fa-briefcase icon dark-purple"></i>
+            </div>
+
+            <div class="card--header">
+              <span class="title">Internship Unit</span>
+              <span class="ammount-value" id="internship-card-value">0</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="payment--card light-purple" id="card-3">
+            <div class="icon-container">
+              <i class="fas fa-building icon dark-purple"></i>
+            </div>
+
+            <div class="card--header">
+              <span class="title">Department</span>
+              <span class="ammount-value" id="department-card-value">0</span>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="payment--card light-purple" id="card-4">
+            <div class="icon-container">
+              <i class="fas fa-chalkboard-teacher icon dark-purple"></i>
+            </div>
+
+            <div class="card--header">
+              <span class="title">Advisor</span>
+              <span class="ammount-value" id="advisor-card-value">0</span>
+            </div>
+          </div>
+        
+<!-- change parts -->
+<div class="dashboard-container">
+    <div class="card">
+        <div class="card-header">Approve Company</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Email</th>
+                    <th>Registration Number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Example Corp</td>
+                    <td>example@example.com</td>
+                    <td>12345</td>
+                    <td>Pending</td>
+                    <td class="action-buttons">
+                        <button class="approve-button">Approve</button>
+                        <button class="reject-button">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Acme Inc</td>
+                    <td>contact@acme.com</td>
+                    <td>67890</td>
+                    <td>Pending</td>
+                    <td class="action-buttons">
+                        <button class="approve-button">Approve</button>
+                        <button class="reject-button">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Example Corp</td>
+                  <td>example@example.com</td>
+                  <td>12345</td>
+                  <td>Pending</td>
+                  <td class="action-buttons">
+                      <button class="approve-button">Approve</button>
+                      <button class="reject-button">Reject</button>
+                  </td>
+              </tr>
+              <tr>
+                <td>Example Corp</td>
+                <td>example@example.com</td>
+                <td>12345</td>
+                <td>Pending</td>
+                <td class="action-buttons">
+                    <button class="approve-button">Approve</button>
+                    <button class="reject-button">Reject</button>
+                </td>
+            </tr>
+            <tr>
+              <td>Example Corp</td>
+              <td>example@example.com</td>
+              <td>12345</td>
+              <td>Pending</td>
+              <td class="action-buttons">
+                  <button class="approve-button">Approve</button>
+                  <button class="reject-button">Reject</button>
+              </td>
+          </tr>
+          <tr>
+            <td>Acme Inc</td>
+            <td>contact@acme.com</td>
+            <td>67890</td>
+            <td>Pending</td>
+            <td class="action-buttons">
+                <button class="approve-button">Approve</button>
+                <button class="reject-button">Reject</button>
+            </td>
+        </tr>
+        <tr>
+          <td>Acme Inc</td>
+          <td>contact@acme.com</td>
+          <td>67890</td>
+          <td>Pending</td>
+          <td class="action-buttons">
+              <button class="approve-button">Approve</button>
+              <button class="reject-button">Reject</button>
+          </td>
+      </tr>
+      <tr>
+        <td>Acme Inc</td>
+        <td>contact@acme.com</td>
+        <td>67890</td>
+        <td>Pending</td>
+        <td class="action-buttons">
+            <button class="approve-button">Approve</button>
+            <button class="reject-button">Reject</button>
+        </td>
+    </tr>
+    
+          <tr>
+            <td>Example Corp</td>
+            <td>example@example.com</td>
+            <td>12345</td>
+            <td>Pending</td>
+            <td class="action-buttons">
+                <button class="approve-button">Approve</button>
+                <button class="reject-button">Reject</button>
+            </td>
+        </tr>
+        <tr>
+          <td>Example Corp</td>
+          <td>example@example.com</td>
+          <td>12345</td>
+          <td>Pending</td>
+          <td class="action-buttons">
+              <button class="approve-button">Approve</button>
+              <button class="reject-button">Reject</button>
+          </td>
+      </tr>
+      <tr>
+        <td>Example Corp</td>
+        <td>example@example.com</td>
+        <td>12345</td>
+        <td>Pending</td>
+        <td class="action-buttons">
+          <button class="btn btn-purple" id="approve-btn">Approve</button>
+            <button class="reject-button">Reject</button>
+        </td>
+    </tr>
+    
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<script>
+  <!-- Approve Company Page -->
+<button class="btn btn-purple" id="approve-btn">Approve</button>
+
+
+  document.getElementById("approve-btn").addEventListener("click", function() {
+    // Store the approval action in local storage
+    localStorage.setItem("companyApproved", true);
+    // Redirect to the admin dashboard
+    window.location.href = "admin.html";  // Update with your actual dashboard URL
+  });
+
+</script>
+</div>
+</div>
+    <Special-Footer></Special-Footer>
+
+    <script src="./FooterHeader.js"></script>
+  </body>
+</html>

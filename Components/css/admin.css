@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poopins", sans-serif;
+}
+body {
+  display: flex;
+}
+.header--wrapper img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.header--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 2rem;
+  margin-bottom: 1rem;
+}
+.header--title {
+  color: rgba(113, 99, 186, 255);
+}
+.user--info {
+  display: flex;
+  align-items: center;
+  gap: 1;
+}
+.search--box {
+  background-color: rgb(202, 202, 204);
+  border-radius: 15px;
+  color: rgba(113, 99, 186, 255);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+}
+.search--box input {
+  background: transparent;
+  padding: 10px;
+}
+.search--box i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
+}
+.search--box i:hover {
+  transform: scale(1.2);
+}
+.card--container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.card--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.main--title {
+  color: rgba(113, 99, 186, 255);
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.payment--card {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+}
+.payment--card:hover {
+  transform: translateY(-5px);
+}
+.card--header {
+  display: flex;
+  flex-direction: column;
+  ju
+}
+.title {
+  font-size: 12px;
+  font-weight: 200;
+}
+.amount--value {
+  font-size: 24px;
+  font-family: "courier new", courier, monospace;
+  font-weight: 600;
+}
+.icon {
+  color: white;
+  padding: 1rem;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: red;
+}
+
+.dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Positioned below the parent */
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.dropdown li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.nav > li:hover .dropdown {
+  display: block;
+}
+h1 {
+  text-align: center;
+  color: purple;
+}
+.card.detail {
+  font-size: 18px;
+  color: gray;
+  letter-spacing: 2px;
+  font-family: "courier new", courier, monospace;
+}
+
+.light-purple {
+  background: rgb(254, 226, 233);
+}
+
+.dark-purple {
+  background: purple;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button-group {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+  background-color: purple;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.form h2 {
+  margin-bottom: 15px;
+}
+
+.form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form button:hover {
+  background-color: #218838;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 15px;
+  display: block;
+  text-align: center;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 24px; /* Increased space between cards */
+  padding: 30px;
+  max-width: 1290px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px; /* Increased padding */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 20px; /* Larger text size */
+}
+
+.card h3 {
+  font-size: 24px; /* Larger heading size */
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Slightly larger hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Switch to one column on smaller screens */
+  }
+}
+
+/* this is for approve company page */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  padding: 0px;
+}
+
+.header {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 1150px;
+  max-width: 2000px;
+  margin: 0px 0;
+  padding: 10px;
+}
+
+.card-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.approve-button,
+.reject-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.approve-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.approve-button:hover {
+  background-color: #45a049;
+}
+
+.reject-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.reject-button:hover {
+  background-color: #e53935;
+}
+button {
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  background: purple;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: rgb(197, 195, 195);
+  background: rgb(204, 19, 204);
+}
+.button-colors {
+  color: white;
+  background: purple;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 4px;
+  margin-top: 10px;
+}
+.button-colors:hover {
+  color: rgb(197, 195, 195);
+  background: rgb(204, 19, 204);
+}

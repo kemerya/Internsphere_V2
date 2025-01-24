@@ -1,0 +1,105 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 10px rgba(0.1);
+}
+.other {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  margin: 10px;
+}
+.button-colors {
+  color: white;
+  background: purple;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 4px;
+  margin-top: 10px;
+}
+.button-colors:hover {
+  color: rgb(197, 195, 195);
+  background: rgb(204, 19, 204);
+}
+
+.box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 30%;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+/* Purple Part Styles */
+
+.hhead {
+  margin-top: 80px;
+  margin: auto 0px;
+  font-size: 25px;
+}
+.profile-section {
+  display: flex;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.student-info {
+  flex: 2;
+  padding-right: 20px;
+}
+.head {
+  background: purple;
+  height: 80px;
+  font-size: large;
+}
+h2 {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+.image-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.general-info {
+  flex: 3;
+}
+
+.general-info h4 {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
