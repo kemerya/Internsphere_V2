@@ -12,30 +12,30 @@ class SpecialHeader extends HTMLElement {
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav nav">
                     <li class="nav-item">
-                        <a class="nav-link links active" href="index.html">Home</a>
+                        <a class="nav-link links active" href="CommonPage_Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link links" href="About us.html">About Us</a>
+                        <a class="nav-link links" href="CommonPage_About us.html">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link links dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <a class="dropdown-item" href="internships.html">Internships</a>
+                                <a class="dropdown-item" href="Student_ViewInternshipOpportunities.html">Internships</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item" href="Graduate students.html">Graduate Students</a> 
+                                <a class="dropdown-item" href="Active-company.html">partner companies</a> 
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item" href="companies.html">Companies</a>
+                                <a class="dropdown-item" href="Company_PostInternship.html">Companies</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link links" href="contact.html">Contact Us</a>
+                        <a class="nav-link links" href="CommonPage_contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link links" href="signup.html">Sign Up</a>
+                        <a class="nav-link links" href="Company_signup.html">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -55,7 +55,7 @@ class SpecialFooter extends HTMLElement {
         <br>
         <h4>company</h4>
         <ul>
-          <li><a href="About us.html">About us</a></li>
+          <li><a href="CommonPage_About us.html">About us</a></li>
           <li><a href="Services.html">our service</a></li>
           <li><a href="policy.html">privacy policy</a></li>
           <li><a href="#">affiliate program</a></li>
