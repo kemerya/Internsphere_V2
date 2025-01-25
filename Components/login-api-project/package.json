@@ -1,0 +1,17 @@
+{
+  "name": "login-api-project",
+  "version": "1.0.0",
+  "description": "A simple login API project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kemerya Zeynu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

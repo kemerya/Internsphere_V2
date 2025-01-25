@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Internship Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+       
+
+        /* Header */
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a148c;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Section Title */
+        .section-title {
+            color: #4a148c;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Card Styling */
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .btn-purple {
+            background-color: #4a148c;
+            color: #fff;
+        }
+        .btn-purple:hover {
+            background-color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <Special-Header></Special-Header>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to the Company Dashboard</h1>
+        <p>Manage internships, applications, and reports seamlessly.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Post Internship -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/postInternship.png" alt="Post Internship">
+                    <div class="card-body">
+                        <h5 class="card-title">Post Internship</h5>
+                        <p class="card-text">Create and publish new internship opportunities for students.</p>
+                       <a href="Company_PostInternship.html"class="btn btn-purple">Post Internship</a>
+                    </div>
+                </div>
+            </div>
+            <!-- View Applicants -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/ViewApplicant.png" alt="View Applicants">
+                    <div class="card-body">
+                        <h5 class="card-title">View Applicants</h5>
+                        <p class="card-text">View, accept, or reject applications from students.</p>
+                        <a href="applicant.html"class="btn btn-purple">View Applicants</a> 
+                    </div>
+                </div>
+            </div>
+            <!-- Approve Reports -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/ApproveReport.png" alt="Reports">
+                    <div class="card-body">
+                        <h5 class="card-title">Approve Reports</h5>
+                        <p class="card-text">Review and approve submitted internship reports.</p>
+                        <a href="Student_biWeeklyReport.html" class="btn btn-purple">Approve Reports</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Attendance -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/Attendance.png" alt="Attendance">
+                    <div class="card-body">
+                        <h5 class="card-title">Attendance</h5>
+                        <p class="card-text">Record and manage student attendance efficiently.</p>
+                      <a href="Company_StudentAttendance.html"class="btn btn-purple">Manage Attendance</a> 
+                    </div>
+                </div>
+            </div>
+            <!-- Evaluate Students -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="img/Evaluationn.png" alt="Evaluate Students">
+                    <div class="card-body">
+                        <h5 class="card-title">Evaluate Students</h5>
+                        <p class="card-text">Evaluate student performance and provide feedback.</p>
+                        <a href="Evaluate.html"class="btn btn-purple">Evaluate Students</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <Special-Footer></Special-Footer>
+
+    <script src="./FooterHeader.js"></script>
+    
+
+    <!-- Bootstrap JS -->
+     <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

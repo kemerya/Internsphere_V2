@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance PDF</title>
+</head>
+<body>
+    <h1 class="text-center">Attendance PDF</h1>
+    <iframe id="pdf-frame" style="width: 100%; height: 90vh;" frameborder="0"></iframe>
+
+    <script>
+        // Retrieve the generated PDF as a URL parameter or data URI and display it in the iframe
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('pdf');  // Ensure you pass the PDF URL when navigating here
+        
+        if (pdfUrl) {
+            document.getElementById('pdf-frame').src = pdfUrl; // Set the src of iframe to the PDF
+        }
+    </script>
+</body>
+</html>

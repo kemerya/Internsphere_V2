@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .attendance-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: purple;
+            color: white;
+        }
+        .btn{
+            background-color: purple;
+            color: white;
+        }
+
+        .tick-cell {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="section-title text-center">Attendance for 8 Weeks</h1>
+
+        <div class="attendance-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Generate 8 weeks dynamically -->
+                    <script>
+                        for (let week = 1; week <= 8; week++) {
+                            document.write('<tr>');
+                            document.write(`<td>Week ${week}</td>`);
+                            for (let day = 1; day <= 6; day++) {
+                                document.write('<td class="tick-cell"><input type="checkbox"></td>');
+                            }
+                            document.write('</tr>');
+                        }
+                    </script>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Print Button -->
+        <div class="text-center mt-4">
+            <button id="print-btn" class="btn ">Print Attendance</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle PDF generation using html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script>
+        document.getElementById("print-btn").addEventListener("click", function () {
+            const element = document.querySelector(".attendance-card");
+            html2pdf().from(element).save("attendance.pdf");
+        });
+    </script>
+</body>
+</html>

@@ -23,7 +23,11 @@ to {margin-left: 30%;}
 }
 /* navbar section */
 
-
+.logo{
+    border: #6b1b7f;
+    border-radius: 50;
+    border-right: #6b1b7f;
+}
 
 
 
@@ -366,6 +370,14 @@ p{
 } */
 ul{
     list-style: none;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+    special-footer .footer-container {
+        flex-direction: column; /* Stack columns */
+        align-items: center;
+    }
 }
 
 

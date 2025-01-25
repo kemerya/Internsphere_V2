@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bi-Weekly Report Form</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    /* Styling similar to the previous one */
+  </style>
+</head>
+<body>
+  <Special-Header></Special-Header>
+
+  <div class="container mt-5">
+    <div class="bi-weekly-report-form">
+      <h2 class="text-center mb-4">Bi-Weekly Report Form</h2>
+
+      <form id="reportForm">
+        <div class="row mb-3">
+          <label for="studentName" class="form-label">Student Name</label>
+          <input type="text" class="form-control" id="studentName" required>
+        </div>
+
+        <div class="row mb-3">
+          <label for="studentId" class="form-label">Student ID</label>
+          <input type="text" class="form-control" id="studentId" required>
+        </div>
+
+        <div class="row mb-3">
+          <label for="reportDetails" class="form-label">Report Details</label>
+          <textarea class="form-control" id="reportDetails" rows="4" required></textarea>
+        </div>
+
+        <div class="row mb-3">
+          <button type="submit" class="btn btn-primary">Save Report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <Special-Footer></Special-Footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Save report to localStorage
+    document.getElementById("reportForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const studentName = document.getElementById("studentName").value;
+      const studentId = document.getElementById("studentId").value;
+      const reportDetails = document.getElementById("reportDetails").value;
+
+      // Save data in localStorage
+      const report = {
+        studentName: studentName,
+        studentId: studentId,
+        reportDetails: reportDetails
+      };
+
+      localStorage.setItem("biWeeklyReport", JSON.stringify(report));
+
+      // Redirect to View Report page
+      window.location.href = "viewReport.html";
+    });
+  </script>
+</body>
+</html>

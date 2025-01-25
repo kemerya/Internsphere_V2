@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .section-title {
+            color: purple;
+            font-weight: bold;
+            text-align: center;
+        }
+        .student-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .attendance-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .day-label {
+            font-weight: bold;
+            color: purple;
+        }
+        .submit-btn {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .submit-btn:hover {
+            background-color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="section-title">Attendance</h1>
+
+        <div class="student-info">
+            <p>Student Name: <span id="student-name">kemerya zeynu</span></p>
+            <p>Student ID: <span id="student-id">123456</span></p>
+        </div>
+
+        <div id="attendance-section">
+            <div class="attendance-card">
+                <div class="row">
+                    <script>
+                        for (let row = 0; row < 2; row++) {
+                            document.write('<div class="row mb-4">');
+                            for (let col = 1; col <= 4; col++) {
+                                let week = row * 4 + col;
+                                document.write(`
+                                    <div class="col-3">
+                                        <h5 class="section-title">Week ${week}</h5>
+                                        <div class="mb-2">
+                                            <label class="day-label">Mon:</label>
+                                            <input type="checkbox" name="week${week}-mon">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="day-label">Tue:</label>
+                                            <input type="checkbox" name="week${week}-tue">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="day-label">Wed:</label>
+                                            <input type="checkbox" name="week${week}-wed">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="day-label">Thu:</label>
+                                            <input type="checkbox" name="week${week}-thu">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="day-label">Fri:</label>
+                                            <input type="checkbox" name="week${week}-fri">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="day-label">Sat:</label>
+                                            <input type="checkbox" name="week${week}-sat">
+                                        </div>
+                                    </div>
+                                `);
+                            }
+                            document.write('</div>');
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="submit-btn" onclick="saveAttendance();">Save Attendance</button>
+            <a href="view_attendance.html" class="submit-btn">View Attendance</a>
+        </div>
+    </div>
+
+    <script>
+        function saveAttendance() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const attendance = {};
+
+            checkboxes.forEach((checkbox) => {
+                attendance[checkbox.name] = checkbox.checked;
+            });
+
+            localStorage.setItem('attendanceData', JSON.stringify(attendance));
+            alert('Attendance saved successfully!');
+        }
+    </script>
+</body>
+</html>
+```
+

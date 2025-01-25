@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Advisor</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+   <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .section-title {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn-purple {
+            background-color: purple;
+            color: #fff;
+        }
+
+        .btn-purple:hover {
+            background-color: #6a1b9a;
+        }
+        .main-content {
+            /* margin-left: 30px; */
+            padding: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <Special-Header></Special-Header>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Assign Advisor Section -->
+        <section id="assign-advisor" class="py-2">
+            <div class="container">
+                <h2 class="section-title text-center">Assign Advisor to Interns</h2>
+
+                <!-- Filters -->
+                <div class="filter-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by Name" id="filter-name">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by ID" id="filter-id">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" placeholder="Filter by Section" id="filter-section">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advisor Assignment Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover" id="advisor-table">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Section</th>
+                                <th>Department</th>
+                                <th>Assigned Advisor</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Amir</td>
+                                <td>RCD/3451/2013</td>
+                                <td>A</td>
+                                <td>Computer Science</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option selected>Select Advisor</option>
+                                        <option>Mr b</option>
+                                        <option>Prof . A</option>
+                                        <option>Dr. Y</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button class="btn btn-purple btn-sm assign-btn">Assign</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>kemer</td>
+                                <td>Rcd/3471/2013</td>
+                                <td>j</td>
+                                <td>Computer Scince</td>
+                                <td>
+                                    <select class="form-select">
+                                        <option selected>Select Advisor</option>
+                                        <option>Mr b</option>
+                                        <option>Prof . A</option>
+                                        <option>Dr. Y</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button class="btn btn-purple btn-sm assign-btn">Assign</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <Special-Footer></Special-Footer>
+    <!-- Custom JavaScript -->
+    <script src="./FooterHeader.js"></script>
+    <script>
+        // Filter Functionality
+        document.getElementById('filter-name').addEventListener('input', function () {
+            filterTable(1, this.value);
+        });
+
+        document.getElementById('filter-id').addEventListener('input', function () {
+            filterTable(2, this.value);
+        });
+
+        document.getElementById('filter-section').addEventListener('input', function () {
+            filterTable(3, this.value);
+        });
+
+        function filterTable(columnIndex, query) {
+            const table = document.getElementById('advisor-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells[columnIndex] && cells[columnIndex].innerText.toLowerCase().includes(query.toLowerCase())) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+
+        // Simulated Advisor Assignment
+        document.querySelectorAll('.assign-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const row = this.closest('tr');
+                const studentName = row.cells[1].innerText;
+                const advisor = row.querySelector('select').value;
+
+                if (advisor === 'Select Advisor') {
+                    alert('Please select an advisor before assigning.');
+                } else {
+                    alert(`Advisor ${advisor} assigned to ${studentName}.`);
+                }
+            });
+        });
+    </script>
+   
+
+    
+   
+    
+</body>
+</html>

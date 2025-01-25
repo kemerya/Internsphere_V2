@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bi-Weekly Report Form</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .bi-weekly-report-form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: #4a148c;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select, textarea {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6a1b9a;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn-group button {
+      width: 48%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="bi-weekly-report-form">
+      <h2>Bi-Weekly Report Form</h2>
+
+      <form id="report-form">
+        <!-- Student Information Section -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <label for="student_name" class="form-label">Student Name</label>
+            <input type="text" id="student_name" required>
+          </div>
+          <div class="col-md-4">
+            <label for="student_id" class="form-label">Student ID</label>
+            <input type="text" id="student_id" required>
+          </div>
+          <div class="col-md-4">
+            <label for="section" class="form-label">Section</label>
+            <input type="text" id="section" required>
+          </div>
+        </div>
+
+        <!-- Report Selection Dropdown -->
+        <div class="mb-4">
+          <label for="report_select" class="form-label">Select Bi-Weekly Report</label>
+          <select class="form-select" id="report_select">
+            <option value="1">Bi-Weekly Report 1</option>
+            <option value="2">Bi-Weekly Report 2</option>
+            <option value="3">Bi-Weekly Report 3</option>
+            <option value="4">Bi-Weekly Report 4</option>
+          </select>
+        </div>
+
+        <!-- Date Range and Hours Section -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="start_date" class="form-label">Beginning Date</label>
+            <input type="date" id="start_date" required>
+          </div>
+          <div class="col-md-6">
+            <label for="end_date" class="form-label">Ending Date</label>
+            <input type="date" id="end_date" required>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="cumulative_hours" class="form-label">Cumulative Hours</label>
+            <input type="number" id="cumulative_hours" required>
+          </div>
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" id="department">
+              <option value="cs">Computer Science</option>
+              <option value="accounting">Accounting</option>
+              <option value="marketing">Marketing</option>
+              <option value="management">Management</option>
+              <option value="tourism">Tourism</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Assignment and Reflection Section -->
+        <div class="mb-4">
+          <label for="assignment_responsibilities" class="form-label">Assignment & Responsibilities</label>
+          <textarea id="assignment_responsibilities" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label for="critical_analysis" class="form-label">Critical Analysis</label>
+          <textarea id="critical_analysis" rows="4" required></textarea>
+        </div>
+
+        <!-- Hours Section -->
+        <h5>Hours Breakdown</h5>
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <label for="observing_hours" class="form-label">Observing Hours</label>
+            <input type="number" id="observing_hours" required>
+          </div>
+          <div class="col-md-4">
+            <label for="planning_hours" class="form-label">Planning Hours</label>
+            <input type="number" id="planning_hours" required>
+          </div>
+          <div class="col-md-4">
+            <label for="assisting_hours" class="form-label">Assisting Hours</label>
+            <input type="number" id="assisting_hours" required>
+          </div>
+        </div>
+
+        <!-- Save and View Report Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn-submit">Save Report</button>
+          <button type="button" class="btn-submit" onclick="viewReport()">View Report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function viewReport() {
+      // Simulating viewing reports
+      alert("Viewing saved reports...");
+    }
+
+    document.getElementById("report-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Report Saved Successfully!");
+    });
+  </script>
+
+</body>
+</html>
