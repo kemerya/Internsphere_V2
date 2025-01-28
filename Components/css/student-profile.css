@@ -45,10 +45,19 @@
 }
 /* Purple Part Styles */
 
+.head {
+  background: purple;
+  height: 80px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: large;
+}
+
 .hhead {
-  margin-top: 80px;
-  margin: auto 0px;
   font-size: 25px;
+  color: white;
+  margin: 0; 
 }
 .profile-section {
   display: flex;

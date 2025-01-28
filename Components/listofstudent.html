@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/hulu.css" />
+    
+  </head>
+  <style>
+  .form-containers {
+        background: #ffffff;
+        padding: 50px 60px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .form-containers h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+        color: #333333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #555555;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-buttons .back-btn {
+    background-color: purple;
+  }
+
+  .form-buttons .register-btn {
+    background-color: purple
+  }
+
+  .form-buttons button:hover {
+    opacity: 0.9;
+  }
+
+  .head {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .button-colors {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .button-colors:hover {
+    opacity: 0.9;
+  }
+  .head {
+  background: purple;
+  height: 80px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: large;
+}
+
+.hhead {
+  font-size: 25px;
+  color: white;
+  margin: 0; 
+}
+.table-container {
+        padding: 20px;
+      }
+
+      .student-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .student-table thead {
+        background-color: #800080; /* Purple Header */
+        color: #ffffff;
+      }
+
+      .student-table th,
+      .student-table td {
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .student-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .student-table tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      .student-table th {
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .delete-btn {
+        background-color: #800080; /* Purple Button */
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .delete-btn:hover {
+        background-color: #6c3082; /* Slightly darker purple on hover */
+        opacity: 0.9;
+      }
+      .button-colors {
+  color: white;
+  background: purple;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+</style>
+  <body>
+    <Special-Header></Special-Header>
+
+    <div class="head"><h2 class="hhead">List of student</h2></div>
+    <a href="admin.html"><button class="button-colors">Back</button></a>
+   
+    <div class="table-container">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Batch</th>
+              <th>Section</th>
+              <th>Profile Completed</th>
+              <th>Password</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>2025</td>
+              <td>A</td>
+              <td>Yes</td>
+              <td>password123</td> <!-- Visible password -->
+              <td><button class="delete-btn">Delete</button></td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Jane</td>
+              <td>Smith</td>
+              <td>2024</td>
+              <td>B</td>
+              <td>No</td>
+              <td>letmein456</td> <!-- Visible password -->
+              <td><button class="delete-btn">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+    <Special-Footer></Special-Footer>
+
+    <script src="./FooterHeader.js"></script>
+  </body>
+</html>
